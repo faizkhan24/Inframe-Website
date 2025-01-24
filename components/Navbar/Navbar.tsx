@@ -77,8 +77,8 @@ const Navbar = () => {
 
           {/* Mobile View Hamburger Button */}
           <div className="md:hidden">
-            <Sheet open={openSheet} onOpenChange={setOpenSheet}>
-              <SheetTrigger asChild>
+            <Sheet  open={openSheet} onOpenChange={setOpenSheet}>
+              <SheetTrigger className="border border-black" asChild>
                 <Menu className="text-white text-3xl" />
               </SheetTrigger>
 
