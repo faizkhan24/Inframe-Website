@@ -1,0 +1,184 @@
+import React from "react";
+import { Facebook, Youtube, Instagram, Linkedin, Twitter } from "lucide-react";
+
+const Footer = () => {
+  return (
+    <footer className="bg-gradient-to-b from-black to-gray-900 text-white font-sans py-16">
+      <div className="container mx-auto px-6 lg:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* Quick Links Section */}
+        <div>
+          <h3 className="font-bold text-2xl mb-6">Quick Links</h3>
+          <ul className="space-y-3">
+            <li>
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                Admission Process
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                Campus
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                Faculty
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                Advisors
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                News & Events
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                Careers
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Courses Section */}
+        <div>
+          <h3 className="font-bold text-2xl mb-6">Courses We Offer</h3>
+          <div className="grid grid-cols-2 gap-6">
+            <ul className="space-y-3">
+              <li>
+                <span className="font-semibold">B.Des</span>
+              </li>
+              <li>Fashion Design</li>
+              <li>Industrial Design</li>
+              <li>Communication Design</li>
+              <li>Interior Design</li>
+              <li>User Experience Design</li>
+              <li>Animation & Film Making</li>
+            </ul>
+            <ul className="space-y-3">
+              <li>
+                <span className="font-semibold">M.Des</span>
+              </li>
+              <li>Industrial Design</li>
+              <li>Interior & Furniture Design</li>
+              <li>Communication Design</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Locate Us Section */}
+        <div>
+          <h3 className="font-bold text-2xl mb-6">Locate Us</h3>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28944.773590809277!2d72.8512564!3d26.2424944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418e9b41703f4d%3A0xa8313d8409192420!2s09%2C%20Pal%20Link%20Rd%2C%20Marudhar%20Nagar%2C%20Kamla%20Nehru%20Nagar%2C%20Shyam%20Nagar%2C%20Jodhpur%2C%20Rajasthan%20342008!5e0!3m2!1sen!2sin!4v1671167712000!5m2!1sen!2sin"
+              width="100%"
+              height="200"
+              style={{ border: 0 }}
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p className="mt-4 text-sm opacity-80">
+            09, Pal Link Road, <br />
+            Marudhar Nagar, Kamla Nehru Nagar, <br />
+            Shyam Nagar, Jodhpur, Rajasthan 342008
+          </p>
+          <p className="mt-4 text-sm opacity-80">
+            <strong>Admissions:</strong> +91 9649 9649 37
+            <br />
+            <strong>Admin:</strong> +91 9649 9649 70
+            <br />
+            <strong>Email:</strong>{" "}
+            <a
+              href="mailto:enquiry@dotsod.in"
+              className="underline text-blue-400"
+            >
+              info@inframecollege.org
+            </a>
+            <br />
+            <strong>Careers:</strong>{" "}
+            <a
+              href="mailto:career@dotsod.in"
+              className="underline text-blue-400"
+            >
+              hr@inframecollege.org 
+            </a>
+          </p>
+          <div className="flex space-x-6 mt-8">
+            <a
+              href="#"
+              className="text-blue-500 hover:text-blue-600 transition duration-300"
+            >
+              <Facebook size={30} />
+            </a>
+            <a
+              href="#"
+              className="text-red-500 hover:text-red-600 transition duration-300"
+            >
+              <Youtube size={30} />
+            </a>
+            <a
+              href="#"
+              className="text-pink-500 hover:text-pink-600 transition duration-300"
+            >
+              <Instagram size={30} />
+            </a>
+            <a
+              href="#"
+              className="text-blue-700 hover:text-blue-800 transition duration-300"
+            >
+              <Linkedin size={30} />
+            </a>
+            <a
+              href="#"
+              className="text-sky-500 hover:text-sky-600 transition duration-300"
+            >
+              <Twitter size={30} />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Free Courses Section */}
+      <div className="mt-16 border-t border-gray-700 pt-8">
+        <div className="container mx-auto px-6 lg:px-16 text-center text-sm">
+          <p>
+            <span className="font-semibold">Free Courses:</span> Copywriting · Digital Marketing · Graphic Design · 
+            Interior Design · Digital Software · Facebook Ads · Google Ads · SEO · 
+            Digital Painting · Illustrations · Sewing Machine Technique · Furniture Making · 
+            Sketching · Drawing · Video Editing
+          </p>
+        </div>
+      </div>
+
+      {/* Copyright Section */}
+      <div className="mt-8 border-t-2 border-gray-800 pt-6">
+        <div className="container mx-auto px-6 lg:px-16 text-center text-sm opacity-80">
+          <p>
+            © 2025 Inframe. Ltd. All rights reserved ·{" "}
+            <a href="#" className="hover:underline">
+              Privacy Policy
+            </a>{" "}
+            ·{" "}
+            <a href="#" className="hover:underline">
+              Refund Policy
+            </a>{" "}
+            ·{" "}
+            <a href="#" className="hover:underline">
+              Terms & Conditions
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
