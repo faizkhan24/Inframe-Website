@@ -50,25 +50,35 @@ const Footer = () => {
         {/* Courses Section */}
         <div>
           <h3 className="font-bold text-2xl mb-6">Courses We Offer</h3>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ul className="space-y-3">
-              <li>
-                <span className="font-semibold">B.Des</span>
-              </li>
-              <li>Fashion Design</li>
-              <li>Industrial Design</li>
-              <li>Communication Design</li>
-              <li>Interior Design</li>
-              <li>User Experience Design</li>
-              <li>Animation & Film Making</li>
+              <li className="font-bold">Interior Design</li>
+              <li>B. Des in Interior Design</li>
+              <li>B.VOC in Interior Design</li>
+              <li>B.Sc in Interior Design</li>
+              <li>1-Year Diploma in Interior Design</li>
+              <li>3-Year Diploma in Interior Design</li>
             </ul>
             <ul className="space-y-3">
-              <li>
-                <span className="font-semibold">M.Des</span>
-              </li>
-              <li>Industrial Design</li>
-              <li>Interior & Furniture Design</li>
-              <li>Communication Design</li>
+              <li className="font-bold">Fashion Design</li>
+              <li>B. Des in Fashion Design</li>
+              <li>B.VOC in Fashion Design</li>
+              <li>B.Sc in Fashion Design</li>
+              <li>1-Year Diploma in Fashion Design</li>
+              <li>3-Year Diploma in Fashion Design</li>
+            </ul>
+            <ul className="space-y-3">
+              <li className="font-bold">Graphic Design</li>
+              <li>B. Des in Graphic Design</li>
+              <li>B.VOC in Graphic Design</li>
+              <li>B.Sc in Graphic Design</li>
+              <li>1-Year Diploma in Graphic Design</li>
+              <li>3-Year Diploma in Graphic Design</li>
+            </ul>
+            <ul className="space-y-3">
+              <li className="font-bold">UI & UX Design</li>
+              <li>B. Des in UI & UX Design</li>
+              <li>1-Year Diploma in UI & UX Design</li>
             </ul>
           </div>
         </div>
@@ -108,7 +118,7 @@ const Footer = () => {
               href="mailto:career@dotsod.in"
               className="underline text-blue-400"
             >
-              hr@inframecollege.org 
+              hr@inframecollege.org
             </a>
           </p>
           <div className="flex space-x-6 mt-8">

@@ -1,58 +1,57 @@
 "use client";
 
 import React, { useState } from "react";
-
-import { ChevronDown, Globe, Menu, Search } from "lucide-react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "../ui/navigation-menu";
-import { Input } from "../ui/input";
+import { ChevronDown, Menu } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { INFRAME_LOGO } from "@/utils/constant";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import StudyDropDown from "./StudyDropDown";
+import { useAuth0 } from "@auth0/auth0-react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from "../ui/dropdown-menu"; // ShadCN Dropdown
 
 const Navbar = () => {
   const [openSheet, setOpenSheet] = useState(false); // State for controlling the sheet
+  const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0();
+
+  console.log(user);
 
   return (
-    <header className="fixed w-full bg-black/80 backdrop-blur-sm z-50 py-4 font-sans ">
-      <div className="container max-w-7xl mx-auto px-4">
+    <header className="fixed w-full bg-black/80 backdrop-blur-sm z-50 py-4 font-sans">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
               <span className="font-bold text-xl">
                 <Link href="/">
-                 <Image
-                  src={INFRAME_LOGO}
-                  alt="Inframe College Logo"
-                  width={150}
-                  height={10}
-                  className="object-contain"
-                />
+                  <Image
+                    src={INFRAME_LOGO}
+                    alt="Inframe College Logo"
+                    width={150}
+                    height={10}
+                    className="object-contain"
+                  />
                 </Link>
-               
               </span>
             </div>
             <StudyDropDown />
-
-            <nav className="hidden  md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-8">
               <Link
-                href="#"
-                className="text-muted-foreground  text-white font-bold"
+                href={'/about'}
+                className="text-muted-foreground text-white font-bold"
               >
                 About
               </Link>
               <Link
                 href="#"
-                className="text-muted-foreground  text-white font-bold hover:"
+                className="text-muted-foreground text-white font-bold"
               >
                 Life @ Inframe
               </Link>
@@ -60,32 +59,65 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-7">
-            <Link className="text-white font-bold" href={"/contact"}>
+            <Link className="text-white font-bold" href="/contact">
               Contact Us
             </Link>
-            <Link href="/login">
-              <Button variant="outline" className="text-black font-bold">
-                Login
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button className="bg-yellow-300 text-black font-bold hover:bg-yellow-400">
-                Sign Up
-              </Button>
-            </Link>
+
+            {isAuthenticated ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <div className="flex items-center gap-2 cursor-pointer">
+                    <img
+                      src={user?.picture ?? "/default-avatar.jpg"}
+                      alt={user?.name}
+                      className="w-8 h-8 rounded-full"
+                    />
+                    <span className="text-white font-bold">{user?.name}</span>
+                    <ChevronDown className="text-white" />
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-white text-black">
+                  <DropdownMenuItem disabled>{user?.name}</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    onClick={() =>
+                      logout({ logoutParams: { returnTo: window.location.origin } })
+                    }
+                  >
+                    Log Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                {/* Login Button */}
+                <Button
+                  onClick={() => loginWithRedirect()}
+                  variant="outline"
+                  className="text-black font-bold"
+                >
+                  Login
+                </Button>
+                {/* Sign Up Button */}
+                <Button
+                  onClick={() => loginWithRedirect({ screen_hint: 'signup' })}
+                
+                  className="text-black bg-yellow-300 hover:bg-yellow-400 font-bold"
+                >
+                  Sign Up
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile View Hamburger Button */}
           <div className="md:hidden">
-            <Sheet  open={openSheet} onOpenChange={setOpenSheet}>
+            <Sheet open={openSheet} onOpenChange={setOpenSheet}>
               <SheetTrigger className="border border-black" asChild>
                 <Menu className="text-white text-3xl" />
               </SheetTrigger>
 
-              <SheetContent
-                side="right"
-                className="bg-black text-white font-sans"
-              >
+              <SheetContent side="right" className="bg-black text-white font-sans">
                 <nav className="flex flex-col space-y-4">
                   {/* Navigation Links */}
                   <Link href="/about" className="hover:font-bold">
@@ -95,19 +127,52 @@ const Navbar = () => {
                     LIFE@Inframe
                   </Link>
 
-                  {/* Login and Sign Up Buttons */}
-                  <div className="mt-4">
-                    <Link href="/login">
-                      <Button className="w-full mb-2 text-black font-sans font-bold bg-yellow-300">
+                  {/* Authentication Buttons in Mobile View */}
+                  {isAuthenticated ? (
+                    <DropdownMenu>
+                      <DropdownMenuTrigger>
+                        <div className="flex items-center gap-2 cursor-pointer">
+                          <img
+                            src={user?.picture ?? "/default-avatar.jpg"}
+                            alt={user?.name}
+                            className="w-8 h-8 rounded-full"
+                          />
+                          <ChevronDown className="text-white" />
+                        </div>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="bg-white text-black">
+                        <DropdownMenuItem disabled>{user?.name}</DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem
+                          onClick={() =>
+                            logout({
+                              logoutParams: { returnTo: window.location.origin },
+                            })
+                          }
+                        >
+                          Log Out
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  ) : (
+                    <div>
+                      {/* Mobile Login Button */}
+                      <Button
+                        onClick={() => loginWithRedirect()}
+                        className="w-full mb-2 text-black font-sans font-bold bg-yellow-300"
+                      >
                         Login
                       </Button>
-                    </Link>
-                    <Link href="/signup">
-                      <Button className="w-full bg-white font-sans font-bold text-black">
+
+                      {/* Mobile Sign Up Button */}
+                      <Button
+                        onClick={() => loginWithRedirect({ screen_hint: 'signup' })}
+                        className="w-full mb-2 text-black font-sans font-bold bg-yellow-300"
+                      >
                         Sign Up
                       </Button>
-                    </Link>
-                  </div>
+                    </div>
+                  )}
                 </nav>
               </SheetContent>
             </Sheet>
