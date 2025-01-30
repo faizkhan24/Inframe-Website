@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import {
   NavigationMenu,
@@ -84,7 +85,12 @@ const StudyDropDown = () => {
                             className="group rounded-lg border p-4 hover:bg-muted transition-colors"
                           >
                             <NavigationMenuLink asChild>
-                              <Link href="#" className="block">
+                              <Link
+                                href={`/${item.title
+                                  .replace(/\s+/g, "-")
+                                  .toLowerCase()}`}
+                                className="block"
+                              >
                                 <div className="flex flex-col sm:flex-row gap-4">
                                   <img
                                     src={item.image}
@@ -98,7 +104,10 @@ const StudyDropDown = () => {
                                     <div className="text-sm text-muted-foreground mb-2">
                                       {item.links.map((link, index) => (
                                         <p key={index} className="mb-1">
-                                          <Link className="hover:text-blue-500 hover:underline" href={link.href}>
+                                          <Link
+                                            className="hover:text-blue-500 hover:underline"
+                                            href={link.href}
+                                          >
                                             {link.text}
                                           </Link>
                                         </p>

@@ -14,6 +14,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { categories2 } from "@/utils/constant";
 
 const allCategories = ["All", "Marketing", "Business", "Data", "Design", "Tech", "Product", "Growth"];
 
@@ -21,56 +22,9 @@ const LearnButton = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const categories = [
-    {
-      title: "Marketing",
-      items: [
-        {
-          title: "SEO",
-          description: "Learn SEO from industry experts",
-          instructor: "Kaushal, Founder & MD, Infidigit",
-          duration: "8 Weeks",
-          type: "Live And Recorded",
-          category: "Marketing",
-          image: "https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-        },
-        {
-          title: "Digital Marketing",
-          description: "Master digital marketing strategies",
-          instructor: "Multiple mentors from Dunzo, Amazon",
-          duration: "6 Months",
-          type: "Live And Recorded",
-          category: "Marketing",
-          image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-        }
-      ]
-    },
-    {
-      title: "Tech",
-      items: [
-        {
-          title: "Full Stack Development",
-          description: "Become a full stack developer",
-          instructor: "Senior Engineers from Google",
-          duration: "6 Months",
-          type: "Live And Recorded",
-          category: "Tech",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-        },
-        {
-          title: "Data Science",
-          description: "Master data science and analytics",
-          instructor: "Data Scientists from Amazon",
-          duration: "4 Months",
-          type: "Live And Recorded",
-          category: "Data",
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-        }
-      ]
-    }
-  ];
+  
 
-  const filteredCategories = categories.map(category => ({
+  const filteredCategories = categories2.map(category => ({
     ...category,
     items: category.items.filter(item => {
       const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;

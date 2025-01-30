@@ -181,9 +181,9 @@ export function ContactUsForm({
             </p>
             <div className="mt-6">
               <img
-                src="/path-to-your-qr-code-image.png"
+                src="\qrcode_164435803_146bf5935e9cfa0ac7b362dd16065180.png"
                 alt="QR Code"
-                className="rounded-md shadow-lg w-40 h-40"
+                className="rounded-md shadow-lg w-52 h-52"
               />
             </div>
           </div>

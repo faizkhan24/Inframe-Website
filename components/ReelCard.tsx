@@ -40,7 +40,7 @@ const ReelCard = () => {
 
   return (
     <div className="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen flex flex-col items-center py-10">
-      <div className="flex justify-between items-center max-w-7xl w-full px-6">
+      <div className=" flex flex-col md:flex md:flex-row justify-between items-center max-w-7xl w-full px-6">
         <section className="text-left max-w-lg">
           <h1
             className={`text-white text-5xl lg:text-7xl font-extrabold mb-6 ${poppins.className}`}

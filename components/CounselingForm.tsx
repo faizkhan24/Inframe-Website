@@ -81,7 +81,7 @@ const CounselingForm = () => {
               <div className="bg-white  relative rounded-md overflow-hidden">
                 <div className="p-10">
                   <h2
-                    className={`text-3xl font-bold mb-5 ${poppins.className}`}
+                    className={`text-3xl text-black font-bold mb-5 ${poppins.className}`}
                   >
                     Schedule a Free Session
                   </h2>

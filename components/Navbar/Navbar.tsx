@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronDown, Menu } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -16,10 +16,19 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from "../ui/dropdown-menu"; // ShadCN Dropdown
+import { Poppins } from "next/font/google";
+
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // Including various font weights
+});
 
 const Navbar = () => {
   const [openSheet, setOpenSheet] = useState(false); // State for controlling the sheet
-  const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const { user, loginWithRedirect, logout, isAuthenticated, } = useAuth0();
+
+  
 
   console.log(user);
 
@@ -92,19 +101,21 @@ const Navbar = () => {
               <>
                 {/* Login Button */}
                 <Button
-                  onClick={() => loginWithRedirect()}
-                  variant="outline"
-                  className="text-black font-bold"
-                >
-                  Login
-                </Button>
+                className={`
+         py-5 px-7py-5 px-7  bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 text-black
+        font-bold border-2 border-yellow-400 transition-all duration-300 ease-in-out
+        hover:bg-gradient-to-l hover:from-yellow-500 hover:via-orange-600 hover:to-yellow-500 
+        hover:text-white shadow-lg rounded-lg ${poppins.className}`}
+              >
+                Apply Now
+              </Button>
                 {/* Sign Up Button */}
                 <Button
-                  onClick={() => loginWithRedirect({ screen_hint: 'signup' })}
-                
-                  className="text-black bg-yellow-300 hover:bg-yellow-400 font-bold"
+                  onClick={() => loginWithRedirect()}
+                  variant="outline"
+                  className={`text-black py-5  px-9 bg-yellow-300 hover:bg-yellow-400 font-bold ${poppins.className}`}
                 >
-                  Sign Up
+                  Login
                 </Button>
               </>
             )}
@@ -166,7 +177,7 @@ const Navbar = () => {
 
                       {/* Mobile Sign Up Button */}
                       <Button
-                        onClick={() => loginWithRedirect({ screen_hint: 'signup' })}
+                        onClick={() => loginWithRedirect()}
                         className="w-full mb-2 text-black font-sans font-bold bg-yellow-300"
                       >
                         Sign Up

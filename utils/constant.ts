@@ -379,3 +379,163 @@ export  const cards = [
   ]
   
   
+  export const highlights = [
+    {
+      title: "Research Excellence",
+      count: "500+",
+      desc: "Published Research Papers",
+      image: "/campus images/1721123080085.jpg",
+    },
+    {
+      title: "Global Network",
+      count: "50+",
+      desc: "International Partners",
+      image: "/campus images/1719576914809_1.jpg",
+    },
+    {
+      title: "Innovation Hub",
+      count: "100+",
+      desc: "Startup Incubations",
+      image: "/campus images/1721112431013.jpg",
+    },
+  ];
+
+  export const studentImages = [
+    "/campus images/SKF02795.JPG",
+    "/campus images/SKF02730.JPG",
+    "/campus images/DSC04140.JPG",
+    "/campus images/1722323502473.jpg",
+    "/campus images/1721738128651.jpg",
+    "/campus images/DSC04169.JPG",
+    "/campus images/SKF02800.JPG",
+    "/campus images/SKF02732.JPG",
+    "/campus images/1721738005538.jpg",
+    "/campus images/1719576914809_1.jpg",
+    "/campus images/1717492692489 - Copy (2).jpg",
+    "/campus images/DSC04267.JPG",
+  ];
+
+  export const experienceCamputLife= [
+    "/fashion/DSC03209.JPG",
+    "/fashion/DSC04131.JPG",
+    "/campus images/1721737896096.jpg",
+    "/fine art/SKF09511.JPG",
+    "/IMG-20230414-WA0011.jpg",
+    "/fine art/SKF09513.JPG",
+    "/IMG_8698.jpg",
+    "/fashion/DSC03376.JPG",
+    "/IMG_20230202_141256.jpg",
+    "/IMG-20221021-WA0083.jpg",
+    "/IMG-20221021-WA0033.jpg",
+    "/IMG_20230304_151926.jpg",
+    "/240008bb-a702-400d-b344-429884fda820.jpg",
+  ]
+  
+   export const values = [
+      {
+        title: "Innovation First",
+        description:
+        "At Inframe, we are committed to pushing boundaries through cutting-edge research and technology. Our students and faculty are constantly engaged in innovative projects that aim to transform industries and create lasting impact.",
+        image: "/campus images/1721122517472.jpg",
+      },
+      {
+        title: "Global Perspective",
+        description:
+        "Inframe fosters international collaboration and cultural exchange, offering a global platform for our students. With partnerships across the world, our community is enriched by diverse perspectives and experiences, preparing students for a global workforce.",
+        image: "/campus images/1719471947426.jpg",
+      },
+      {
+        title: "Sustainable Future",
+        description:
+          "We believe in the power of design and business to create a sustainable future. At Inframe, we lead initiatives that promote environmental sustainability and social responsibility, ensuring that our graduates are equipped to contribute to a better world.",
+        image: "/campus images/1717571273328 - Copy.jpg",
+      },
+    ];
+  
+   export const categories2 = [
+      {
+        title: "Marketing",
+        items: [
+          {
+            title: "SEO",
+            description: "Learn SEO from industry experts",
+            instructor: "Kaushal, Founder & MD, Infidigit",
+            duration: "8 Weeks",
+            type: "Live And Recorded",
+            category: "Marketing",
+            image: "https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+          },
+          {
+            title: "Digital Marketing",
+            description: "Master digital marketing strategies",
+            instructor: "Multiple mentors from Dunzo, Amazon",
+            duration: "6 Months",
+            type: "Live And Recorded",
+            category: "Marketing",
+            image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+          }
+        ]
+      },
+      {
+        title: "Tech",
+        items: [
+          {
+            title: "Full Stack Development",
+            description: "Become a full stack developer",
+            instructor: "Senior Engineers from Google",
+            duration: "6 Months",
+            type: "Live And Recorded",
+            category: "Tech",
+            image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+          },
+          {
+            title: "Data Science",
+            description: "Master data science and analytics",
+            instructor: "Data Scientists from Amazon",
+            duration: "4 Months",
+            type: "Live And Recorded",
+            category: "Data",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+          }
+        ]
+      }
+    ];
+
+
+   export const courseImages = {
+      bdes: [
+        "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+        "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e",
+        "https://images.unsplash.com/photo-1617806118233-18e1de247200",
+        "https://images.unsplash.com/photo-1631679706909-1844bbd07221",
+        "https://images.unsplash.com/photo-1616137466211-f939a420be84",
+      ],
+      bvoc: [
+        "https://images.unsplash.com/photo-1615529182904-14819c35db37",
+        "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a",
+        "https://images.unsplash.com/photo-1618219740975-d89445ee8e72",
+        "https://images.unsplash.com/photo-1615876234886-fd9a39fda97f",
+        "https://images.unsplash.com/photo-1616486305462-7da8b914637f",
+      ],
+      bsc: [
+        "https://images.unsplash.com/photo-1616046229478-9901c5536a45",
+        "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20",
+        "https://images.unsplash.com/photo-1616594039964-ae9021a400a0",
+        "https://images.unsplash.com/photo-1617104662772-519cda8c416d",
+        "https://images.unsplash.com/photo-1616046229478-9901c5536a45",
+      ],
+      diploma1: [
+        "https://images.unsplash.com/photo-1618221469555-7f3ad97540d6",
+        "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+        "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e",
+        "https://images.unsplash.com/photo-1617806118233-18e1de247200",
+        "https://images.unsplash.com/photo-1631679706909-1844bbd07221",
+      ],
+      diploma3: [
+        "https://images.unsplash.com/photo-1616593969747-4797dc75033e",
+        "https://images.unsplash.com/photo-1615529182904-14819c35db37",
+        "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a",
+        "https://images.unsplash.com/photo-1618219740975-d89445ee8e72",
+        "https://images.unsplash.com/photo-1615876234886-fd9a39fda97f",
+      ],
+    };
