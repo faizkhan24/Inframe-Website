@@ -51,11 +51,6 @@ const ModernGallery = () => {
     }
   ];
 
-  interface Image {
-    url: string;
-    alt: string;
-    size: string;
-  }
 
   const navigateGallery = (direction: number) => {
     if (selectedIndex !== null) {

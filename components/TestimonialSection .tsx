@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { testimonials } from "@/utils/constant";

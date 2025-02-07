@@ -8,13 +8,13 @@ import { Poppins } from "next/font/google";
 import HighlightsSection from "./HighlightsSection";
 import CareerProspects from "./CareerProspects";
 import CurriculumSection from "./CurriculumSection";
-import CourseStructure from "./CourseStructure";
+
 import SoftwareLogos from "./SoftwareLogos";
 import TestimonialSlider from "./TestimonialSlider";
 import FAQSection from "./FAQSection";
 import { categoryHeroImages, CurriculumType, SoftwareType, VideosType, WhatLearn } from "@/utils/courseTypes";
 import IndustryPartners from "./Partners";
-import ApplyNowForm from "./ApplyNow";
+
 import AdmissionProcess from "./AdmissionProcess";
 import WhatYouWillLearn from "./WhatYouWillLearn";
 import DreamsSection from "../DreamSection";

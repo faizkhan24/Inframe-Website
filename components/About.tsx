@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  experienceCamputLife,
+
   highlights,
   LOGOS,
   studentImages,
@@ -10,7 +10,7 @@ import {
 import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
 import ApplyNow from "./ApplyNow";
 import Image from "next/image";
-import { useAuth0 } from "@auth0/auth0-react";
+
 
 import "aos/dist/aos.css"; // Import the CSS for animations
 import CampusLife from "./CampusLife";

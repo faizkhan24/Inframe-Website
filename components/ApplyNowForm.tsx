@@ -47,14 +47,28 @@ const ApplyNowForm = ({ isFormOpen, setIsFormOpen, isScrolled }: ApplyNowFormPro
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
-  } = useForm({
+   
+  } = useForm<FormData>({
     resolver: zodResolver(ApplyFormSchema),
   });
 
-  const onSubmit = async (data: any) => {
+  interface FormData {
+    name: string;
+    email: string;
+    phone: string;
+    state: string;
+    city: string;
+    level: string;
+    program: string;
+  }
+
+  interface FormResponse {
+    ok: boolean;
+  }
+
+  const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch("https://formspree.io/f/mvgzrnyl", { // Replace with your Formspree form ID
+      const response: FormResponse = await fetch("https://formspree.io/f/mvgzrnyl", { // Replace with your Formspree form ID
         method: "POST",
         headers: {
           "Content-Type": "application/json",

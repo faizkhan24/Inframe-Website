@@ -11,7 +11,7 @@ import FeaturesSection from "@/components/WhyInframe";
 import TestimonialCarousel from "@/components/TestimonialSection ";
 import { Courses } from "@/components/Courses";
 import MembershipPartnership from "@/components/MemberShipSection";
-import ReelCard from "@/components/ReelCard";
+
 
 
 export default function Home() {

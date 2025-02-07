@@ -11,9 +11,7 @@ interface LearningOutcome {
   description: string;
 }
 
-interface WhatYouWillLearnProps {
-  learningOutcomes: LearningOutcome[];
-}
+
 
 const WhatYouWillLearn = ({ whatYouWillLearn }: { whatYouWillLearn: LearningOutcome[] }) => {
   return (

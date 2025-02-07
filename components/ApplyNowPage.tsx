@@ -12,38 +12,18 @@ declare global {
 }
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Star, GraduationCap, Users, Building2, Trophy, BookOpen, Quote, MapPin, Mail, Phone } from "lucide-react";
+
+
+import { Users,  Trophy, BookOpen, MapPin, Mail, Phone } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import IndustryPartners from "./Courses/Partners";
-import TestimonialCarousel from "./TestimonialSection ";
+
 import Testimonial from "./Testimonials";
 import { Poppins } from "next/font/google";
 import WhyInframe from "./WhyInframe";
 import CampusLife from "./CampusLife";
 import ApplyNow from "./ApplyNow";
-import { useAuth0 } from "@auth0/auth0-react";
+
 import ApplyNowForm from "./ApplyNowForm";
 
 
@@ -106,6 +86,26 @@ export default function ApplyPage() {
     const originalFunction = window.onYouTubeIframeAPIReady;
 
     window.onYouTubeIframeAPIReady = () => {
+      interface PlayerVars {
+        autoplay: number;
+        loop: number;
+        controls: number;
+        showinfo: number;
+        rel: number;
+        enablejsapi: number;
+        modestbranding: number;
+        mute: number;
+        playlist: string;
+      }
+
+      interface PlayerOptions {
+        videoId: string;
+        playerVars: PlayerVars;
+        events: {
+          onReady: (event: { target: { playVideo: () => void } }) => void;
+        };
+      }
+
       new window.YT.Player('youtube-player', {
         videoId: 'JW0YxVpnj9o',
         playerVars: {
@@ -120,11 +120,11 @@ export default function ApplyPage() {
           playlist: 'JW0YxVpnj9o'
         },
         events: {
-          onReady: (event: any) => {
+          onReady: (event) => {
             event.target.playVideo();
           }
         }
-      });
+      } as PlayerOptions);
     };
 
     return () => {
