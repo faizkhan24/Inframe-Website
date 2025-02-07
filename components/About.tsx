@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { highlights, LOGOS, studentImages, values } from "@/utils/constant";
