@@ -213,7 +213,7 @@ export function ContactUsForm({
                         {...field}
                         id="first_name"
                         placeholder="Your First Name"
-                        error={!!errors.first_name}
+                        className={!!errors.first_name ? "border-red-500" : ""}
                       />
                     )}
                   />
@@ -231,7 +231,7 @@ export function ContactUsForm({
                         {...field}
                         id="last_name"
                         placeholder="Your Last Name"
-                        error={!!errors.last_name}
+                        className={!!errors.last_name ? "border-red-500" : ""}
                       />
                     )}
                   />
@@ -249,7 +249,6 @@ export function ContactUsForm({
                         {...field}
                         id="email"
                         placeholder="Your Email"
-                        error={!!errors.email}
                       />
                     )}
                   />
@@ -267,7 +266,6 @@ export function ContactUsForm({
                         {...field}
                         id="message"
                         placeholder="Your Message"
-                        error={!!errors.message}
                       />
                     )}
                   />

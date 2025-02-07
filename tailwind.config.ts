@@ -11,15 +11,20 @@ export default {
     extend: {
       animation: {
         scroll: "scroll 30s linear infinite",
+        fadeIn: "fadeIn 1s ease-out forwards"
       },
       keyframes: {
         scroll: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        }
       },
       fontFamily: {
-        sans: ["var(--font-manrope)", "sans-serif"], // Use Manrope as the default sans font
+        sans: ["var(--font-manrope)", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

@@ -135,7 +135,7 @@ export  const cards = [
       name: "Hashim",
       feedback:
         "The inspiration and tools I’ve gained here have helped me take my art to the next level.",
-      imageUrl: "/testimonials images/WhatsApp Image 2025-01-21 at 11.50.15 AM.jpeg",
+      imageUrl: "/testimonials images/IMG_20250206_204402 (2).JPG",
     },
     {
       id: 6,
@@ -172,7 +172,7 @@ export  const cards = [
   
       feedback:
         "Hello, I’m Mohammed Aafaque, pursuing a 1-year Digital Marketing Diploma at Inframe College. My experience has been great, thanks to the skilled and supportive teachers. Highly recommended!",
-      imageUrl: "/testimonials images/Screenshot_21-1-2025_161458_.jpeg",
+      imageUrl: "/testimonials images/IMG_20240111_172630_236 (1).jpg",
     },
     {
       id: 11,
@@ -203,7 +203,7 @@ export  const cards = [
       name: "Ashok",
   
       feedback:
-        "I am Ashok from the Interior Design department. My diploma is about to finish, and my overall experience has been amazing, from studies to the creative environment. Hands-on learning through site visits, seminars, and workshops, along with supportive faculty and helpful administration, made this journey truly great.",
+        "I am Ashok from the Interior Design department. My diploma is about to finish, and my overall experience has been amazing, from studies to the creative environment. ",
       imageUrl: "/testimonials images/WhatsApp Image 2025-01-21 at 11.54.38 AM.jpeg",
     },
     {
@@ -282,7 +282,7 @@ export  const cards = [
           image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
         },
         {
-          title: "UI & UX Design",
+          title: "UIUX-Design",
           links: [
             { text: "B. Des In UI & UX Design", href: "#" },
             { text: "1 Year Diploma in UI & UX Design", href: "#" }
@@ -291,7 +291,7 @@ export  const cards = [
           image: "https://images.unsplash.com/photo-1613909207039-6b173b755cc1?q=80&w=2147&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
-          title: "Animation and VFX",
+          title: "Animation-VFX",
           links: [
             { text: "B. Des in Animation and VFX", href: "#" },
             { text: "B.VOC in Animation and VFX", href: "#" },
@@ -340,7 +340,7 @@ export  const cards = [
           image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
         },
         {
-          title: "Media and Entertainment",
+          title: "Media-Entertainment",
           links: [
             { text: "B.VOC in Media and Entertainment", href: "#" },
             { text: "1 Year Diploma in Media and Entertainment", href: "#" }
@@ -349,7 +349,7 @@ export  const cards = [
           image: "https://images.unsplash.com/photo-1603739903239-8b6e64c3b185?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
-          title: "Advertising and Marketing",
+          title: "Advertising-Marketing",
           links: [
             { text: "Learn advanced advertising and marketing strategies", href: "#" }
           ],
@@ -539,3 +539,94 @@ export  const cards = [
         "https://images.unsplash.com/photo-1615876234886-fd9a39fda97f",
       ],
     };
+
+
+
+   export const states = [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttar Pradesh",
+      "Uttarakhand",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Ladakh",
+      "Lakshadweep",
+      "Puducherry"
+    ];
+    
+    export  const cities = {
+      "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool", "Kakinada", "Tirupati", "Rajahmundry", "Kadapa", "Anantapur"],
+      "Arunachal Pradesh": ["Itanagar", "Naharlagun", "Pasighat", "Namsai", "Tawang", "Bomdila", "Ziro", "Roing", "Tezu", "Along"],
+      "Assam": ["Guwahati", "Silchar", "Dibrugarh", "Jorhat", "Nagaon", "Tinsukia", "Tezpur", "Karimganj", "Diphu", "Goalpara"],
+      "Bihar": ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Purnia", "Darbhanga", "Bihar Sharif", "Arrah", "Begusarai", "Katihar"],
+      "Chhattisgarh": ["Raipur", "Bhilai", "Bilaspur", "Korba", "Durg", "Rajnandgaon", "Jagdalpur", "Raigarh", "Ambikapur", "Mahasamund"],
+      "Goa": ["Panaji", "Margao", "Vasco da Gama", "Mapusa", "Ponda", "Bicholim", "Curchorem", "Cuncolim", "Valpoi", "Sanquelim"],
+      "Gujarat": ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar", "Jamnagar", "Gandhinagar", "Junagadh", "Anand", "Nadiad"],
+      "Haryana": ["Faridabad", "Gurgaon", "Panipat", "Ambala", "Yamunanagar", "Rohtak", "Hisar", "Karnal", "Sonipat", "Panchkula"],
+      "Himachal Pradesh": ["Shimla", "Mandi", "Solan", "Dharamshala", "Kullu", "Bilaspur", "Chamba", "Hamirpur", "Una", "Nahan"],
+      "Jharkhand": ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro", "Hazaribagh", "Deoghar", "Giridih", "Ramgarh", "Medininagar", "Chirkunda"],
+      "Karnataka": ["Bangalore", "Mysore", "Hubli", "Mangalore", "Belgaum", "Gulbarga", "Davanagere", "Bellary", "Bijapur", "Shimoga"],
+      "Kerala": ["Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur", "Kollam", "Palakkad", "Alappuzha", "Kannur", "Kottayam", "Malappuram"],
+      "Madhya Pradesh": ["Indore", "Bhopal", "Jabalpur", "Gwalior", "Ujjain", "Sagar", "Dewas", "Satna", "Ratlam", "Rewa"],
+      "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik", "Aurangabad", "Solapur", "Kolhapur", "Amravati", "Nanded"],
+      "Manipur": ["Imphal", "Thoubal", "Kakching", "Ukhrul", "Chandel", "Bishnupur", "Churachandpur", "Senapati", "Tamenglong", "Jiribam"],
+      "Meghalaya": ["Shillong", "Tura", "Jowai", "Nongstoin", "Williamnagar", "Baghmara", "Resubelpara", "Ampati", "Mairang", "Khliehriat"],
+      "Mizoram": ["Aizawl", "Lunglei", "Saiha", "Champhai", "Kolasib", "Serchhip", "Lawngtlai", "Mamit", "Khawzawl", "Hnahthial"],
+      "Nagaland": ["Kohima", "Dimapur", "Mokokchung", "Tuensang", "Wokha", "Zunheboto", "Mon", "Phek", "Kiphire", "Longleng"],
+      "Odisha": ["Bhubaneswar", "Cuttack", "Rourkela", "Berhampur", "Sambalpur", "Puri", "Balasore", "Bhadrak", "Baripada", "Jharsuguda"],
+      "Punjab": ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Bathinda", "Mohali", "Hoshiarpur", "Batala", "Pathankot", "Moga"],
+      "Rajasthan": ["Jaipur", "Jodhpur", "Kota", "Bikaner", "Ajmer", "Udaipur", "Bhilwara", "Alwar", "Sikar", "Sri Ganganagar"],
+      "Sikkim": ["Gangtok", "Namchi", "Gyalshing", "Mangan", "Rangpo", "Singtam", "Jorethang", "Nayabazar", "Ravangla", "Soreng"],
+      "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Tirunelveli", "Tiruppur", "Vellore", "Erode", "Thoothukkudi"],
+      "Telangana": ["Hyderabad", "Warangal", "Nizamabad", "Karimnagar", "Ramagundam", "Khammam", "Mahbubnagar", "Nalgonda", "Adilabad", "Suryapet"],
+      "Tripura": ["Agartala", "Udaipur", "Dharmanagar", "Belonia", "Kailasahar", "Ambassa", "Khowai", "Teliamura", "Bishramganj", "Amarpur"],
+      "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi", "Agra", "Meerut", "Prayagraj", "Ghaziabad", "Bareilly", "Aligarh", "Moradabad"],
+      "Uttarakhand": ["Dehradun", "Haridwar", "Roorkee", "Haldwani", "Rudrapur", "Kashipur", "Rishikesh", "Pithoragarh", "Ramnagar", "Kotdwar"],
+      "West Bengal": ["Kolkata", "Howrah", "Durgapur", "Asansol", "Siliguri", "Bardhaman", "Malda", "Baharampur", "Habra", "Kharagpur"],
+      "Andaman and Nicobar Islands": ["Port Blair", "Prothrapur", "Garacharma", "Bambooflat", "Mayabunder", "Diglipur", "Car Nicobar", "Rangat", "Little Andaman", "Havelock"],
+      "Chandigarh": ["Chandigarh", "Manimajra", "Burail", "Attawa", "Badheri", "Buterla", "Daria", "Dhanas", "Hallomajra", "Kajheri"],
+      "Dadra and Nagar Haveli and Daman and Diu": ["Daman", "Diu", "Silvassa", "Amli", "Samarvarni", "Dadra", "Naroli", "Vapi", "Bhimpore", "Nani Daman"],
+      "Delhi": ["New Delhi", "Delhi", "Dwarka", "Rohini", "Pitampura", "Janakpuri", "Punjabi Bagh", "Shahdara", "Patparganj", "Mayur Vihar"],
+      "Jammu and Kashmir": ["Srinagar", "Jammu", "Anantnag", "Baramulla", "Kathua", "Sopore", "Udhampur", "Kupwara", "Pulwama", "Poonch"],
+      "Ladakh": ["Leh", "Kargil", "Diskit", "Pangong Tso", "Zanskar", "Nubra", "Khaltse", "Drass", "Sankoo", "Padum"],
+      "Lakshadweep": ["Kavaratti", "Agatti", "Amini", "Andrott", "Minicoy", "Kalpeni", "Kiltan", "Chetlat", "Kadmat", "Bitra"],
+      "Puducherry": ["Puducherry", "Karaikal", "Yanam", "Mahe", "Ozhukarai", "Villianur", "Ariyankuppam", "Bahour", "Madagadi", "Thirubhuvanai"]
+    };
+  
+ export const levels = [
+    "B. Des", "B.VOC", "B.SC", "1 Year Diploma", 
+    "3 Year Diploma", "BBA", "6 Month Certification Course"
+  ];
+  
+ export const program = [
+    "Interior Design", "Fashion Design", "Graphic Design", "UI & UX Design",
+    "Animation and VFX", "Jewellery Design", "Fine Arts", "Digital Marketing",
+    "Entrepreneurship Skill", "Media and Entertainment", "Advertising and Marketing"
+  ];

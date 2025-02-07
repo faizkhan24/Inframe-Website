@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react"; // Lucide icons
 import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
+import Link from "next/link";
 
 // Using the Poppins font
 const poppins = Poppins({
@@ -25,13 +26,13 @@ const DreamsSection = () => {
 
         {/* Button Section */}
         <div className="flex-shrink-0 mt-6 lg:mt-0">
-          <a
+          <Link
             href="#apply"
             className="inline-block py-3 px-8 bg-black text-yellow-500 font-semibold text-sm lg:text-base rounded-lg shadow-xl transform transition-all duration-300 hover:scale-105 hover:bg-yellow-500 hover:text-black flex items-center gap-2 justify-center"
           >
             <span>Apply Now</span>
             <ArrowRight size={20} />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

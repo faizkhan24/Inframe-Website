@@ -9,41 +9,13 @@ const Footer = () => {
         <div>
           <h3 className="font-bold text-2xl mb-6">Quick Links</h3>
           <ul className="space-y-3">
-            <li>
-              <a href="#" className="hover:text-blue-500 transition duration-300">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition duration-300">
-                Admission Process
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition duration-300">
-                Campus
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition duration-300">
-                Faculty
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition duration-300">
-                Advisors
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition duration-300">
-                News & Events
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition duration-300">
-                Careers
-              </a>
-            </li>
+            <li><a href="#" className="hover:text-blue-500 transition duration-300">About Us</a></li>
+            <li><a href="#" className="hover:text-blue-500 transition duration-300">Admission Process</a></li>
+            <li><a href="#" className="hover:text-blue-500 transition duration-300">Campus</a></li>
+            <li><a href="#" className="hover:text-blue-500 transition duration-300">Faculty</a></li>
+            <li><a href="#" className="hover:text-blue-500 transition duration-300">Advisors</a></li>
+            <li><a href="#" className="hover:text-blue-500 transition duration-300">News & Events</a></li>
+            <li><a href="#" className="hover:text-blue-500 transition duration-300">Careers</a></li>
           </ul>
         </div>
 
@@ -106,52 +78,21 @@ const Footer = () => {
             <strong>Admin:</strong> +91 9649 9649 70
             <br />
             <strong>Email:</strong>{" "}
-            <a
-              href="mailto:enquiry@dotsod.in"
-              className="underline text-blue-400"
-            >
+            <a href="mailto:info@inframecollege.org" className="underline text-blue-400">
               info@inframecollege.org
             </a>
             <br />
             <strong>Careers:</strong>{" "}
-            <a
-              href="mailto:career@dotsod.in"
-              className="underline text-blue-400"
-            >
+            <a href="mailto:hr@inframecollege.org" className="underline text-blue-400">
               hr@inframecollege.org
             </a>
           </p>
           <div className="flex space-x-6 mt-8">
-            <a
-              href="#"
-              className="text-blue-500 hover:text-blue-600 transition duration-300"
-            >
-              <Facebook size={30} />
-            </a>
-            <a
-              href="#"
-              className="text-red-500 hover:text-red-600 transition duration-300"
-            >
-              <Youtube size={30} />
-            </a>
-            <a
-              href="#"
-              className="text-pink-500 hover:text-pink-600 transition duration-300"
-            >
-              <Instagram size={30} />
-            </a>
-            <a
-              href="#"
-              className="text-blue-700 hover:text-blue-800 transition duration-300"
-            >
-              <Linkedin size={30} />
-            </a>
-            <a
-              href="#"
-              className="text-sky-500 hover:text-sky-600 transition duration-300"
-            >
-              <Twitter size={30} />
-            </a>
+            <a href="#" className="text-blue-500 hover:text-blue-600 transition duration-300"><Facebook size={30} /></a>
+            <a href="#" className="text-red-500 hover:text-red-600 transition duration-300"><Youtube size={30} /></a>
+            <a href="#" className="text-pink-500 hover:text-pink-600 transition duration-300"><Instagram size={30} /></a>
+            <a href="#" className="text-blue-700 hover:text-blue-800 transition duration-300"><Linkedin size={30} /></a>
+            <a href="#" className="text-sky-500 hover:text-sky-600 transition duration-300"><Twitter size={30} /></a>
           </div>
         </div>
       </div>
@@ -163,7 +104,10 @@ const Footer = () => {
             <span className="font-semibold">Free Courses:</span> Copywriting · Digital Marketing · Graphic Design · 
             Interior Design · Digital Software · Facebook Ads · Google Ads · SEO · 
             Digital Painting · Illustrations · Sewing Machine Technique · Furniture Making · 
-            Sketching · Drawing · Video Editing
+            Sketching · Drawing · Video Editing · Fashion Styling · Fashion Communication · 
+            English Communication · Animation · VFX · Jewellery Design · CAD Design · 
+            Painting · Business Management · Draping · Pattern Making · Carpentry · 
+            Entrepreneurship Skills · Advertising · Marketing
           </p>
         </div>
       </div>
@@ -173,17 +117,9 @@ const Footer = () => {
         <div className="container mx-auto px-6 lg:px-16 text-center text-sm opacity-80">
           <p>
             © 2025 Inframe. Ltd. All rights reserved ·{" "}
-            <a href="#" className="hover:underline">
-              Privacy Policy
-            </a>{" "}
-            ·{" "}
-            <a href="#" className="hover:underline">
-              Refund Policy
-            </a>{" "}
-            ·{" "}
-            <a href="#" className="hover:underline">
-              Terms & Conditions
-            </a>
+            <a href="#" className="hover:underline">Privacy Policy</a> ·{" "}
+            <a href="#" className="hover:underline">Refund Policy</a> ·{" "}
+            <a href="#" className="hover:underline">Terms & Conditions</a>
           </p>
         </div>
       </div>

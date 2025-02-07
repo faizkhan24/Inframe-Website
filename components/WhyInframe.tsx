@@ -47,16 +47,16 @@ const WhyInframe = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left Section */}
           <div className="flex flex-col justify-center items-start">
-            <h6 className="text-xl text-gray-600 mb-2">Transparent Process</h6>
+            <h6 className={`text-xl text-gray-600 mb-2 ${poppins.className}`}>Transparent Process</h6>
             <h2 className={`text-4xl font-bold mb-4 ${poppins.className}`}>Why People Choose Us</h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-gray-700 mb-6 font-sans">
               At Inframe, we are committed to providing a transformative learning experience that blends industry expertise with hands-on opportunities. Our comprehensive approach ensures that students not only receive the best education but also gain the real-world experience needed to thrive in a competitive market.
             </p>
             <div className="relative">
               <img
-                src="https://i.ibb.co/JjmqDrK/choose.png"
+                src="\campus images\1721366034581.jpg"
                 alt="Why Choose Us"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg p-8 shadow-lg"
               />
               <a
                 href="#"
@@ -72,7 +72,7 @@ const WhyInframe = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white text-center p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                className={`bg-white text-center p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ${poppins.className}`}
               >
                 <div className="text-yellow-500 mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>

@@ -162,5 +162,49 @@ body {
   scrollbar-color: #888 #f4f4f4; /* Thumb and track color */
 }
 
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 2s ease forwards;
+}
+
+/* Add these styles for the doodle effect */
+.animate-draw:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animate-draw:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.animate-draw:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.animate-draw:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.animate-draw:nth-child(6) {
+  animation-delay: 1s;
+}
+.animate-draw:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.animate-draw:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+
 
 

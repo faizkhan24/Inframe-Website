@@ -1,58 +1,78 @@
+import { LOGOS } from "@/utils/constant";
 import React from "react";
-import { motion, AnimatePresence } from 'framer-motion';
+import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
 
-const partners = [
-    { name: "Urban Foundry", logo: "/company logo/78394a3a-4e2c-4059-b61b-9277920588e7.jpg" },
-    { name: "OneClick", logo: "/company logo/logo (1).pn" },
-    { name: "Architect Era", logo: "/company logo/architect era logo.jpg" },
-    { name: "Art Maker", logo: "/company logo/Art Maker  2.png" },
-    { name: "Design Daily Landscape", logo: "/company logo/DesignDailyLandscape.png" },
-    { name: "Hunarship", logo: "/company logo/download (1).png0" },
-    { name: "Being Nest", logo: "/company logo/download.png" },
-    { name: "GM Final", logo: "/company logo/GM_Final-Logo02.png" }
-  ];
-const IndustryPartners = () => {
+// Using the Poppins font
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // Including various font weights
+});
+
+const IndustryPartners: React.FC = () => {
   return (
-    <div>
-      <section className="py-16 bg-zinc-900 overflow-hidden">
-        <div className="container mx-auto px-4 mb-8">
-          <h2 className="text-2xl font-bold text-center text-white mb-12">
-            Our Industry Partners
-          </h2>
-        </div>
-        <div className="relative">
-          <div className="flex space-x-12 animate-scroll">
-            {[...partners, ...partners].map((partner, index) => (
-              <motion.div
-                key={index}
-                className="flex-shrink-0 w-40"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
-              >
+    <div className="w-full  lg:text-left text-center mt-20 ">
+      {/* Heading */}
+      <h2
+  className={`text-center xl:text-left font-sans text-3xl font-bold text-gray-800 mb-4 ${poppins.className}`}
+>
+  INDUSTRY & PLACEMENT PARTNER
+</h2>
+
+{/* Short Description Paragraph */}
+<p className={`text-center xl:text-left text-lg text-gray-600 mb-8 ${poppins.className}`}>
+  Inframe’s strong industry partnerships provide students with unparalleled career opportunities and real-world experience to excel in design and business.
+</p>
+
+      {/* Slider container */}
+      <div className="relative bg-white overflow-hidden py-12">
+        {/* Mask effects for fading edges */}
+
+
+        {/* Animated slider */}
+        <div className="flex animate-[scroll_20s_linear_infinite] space-x-12">
+          {/* First set of logos */}
+          {LOGOS.map((logo, index) => (
+            <div
+              key={`logo-1-${index}`}
+              className="flex flex-col items-center justify-center text-slate-800"
+            >
+              <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 shadow-md border border-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
                 <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="w-full  "
+                  src={logo.src}
+                  alt={logo.name}
+                  width={120}
+                  height={120}
+                  className="object-contain"
                 />
-              </motion.div>
-            ))}
-          </div>
+              </div>
+              <p className="mt-2 text-sm font-medium text-gray-600">
+                {logo.name}
+              </p>
+            </div>
+          ))}
+
+          {/* Second set of logos to create infinite scroll effect */}
+          {LOGOS.map((logo, index) => (
+            <div
+              key={`logo-2-${index}`}
+              className="flex flex-col items-center justify-center text-slate-800"
+            >
+              <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 shadow-md border border-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  width={120}
+                  height={120}
+                  className="object-contain"
+                />
+              </div>
+              <p className="mt-2 text-sm font-medium text-gray-600">
+                {logo.name}
+              </p>
+            </div>
+          ))}
         </div>
-        <style jsx>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          .animate-scroll {
-            animation: scroll 30s linear infinite;
-          }
-        `}</style>
-      </section>
+      </div>
     </div>
   );
 };

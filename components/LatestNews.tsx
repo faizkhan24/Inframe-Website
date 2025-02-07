@@ -14,9 +14,17 @@ const poppins = Poppins({
 });
 
 const LatestNews = () => {
-  const [news, setNews] = useState([]);
+  interface Article {
+    title: string;
+    description: string | null;
+    url: string;
+    urlToImage: string | null;
+    publishedAt: string;
+  }
+  
+  const [news, setNews] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -29,7 +37,19 @@ const LatestNews = () => {
         console.log(response.data);
 
         // Now, filter the news on both title and description
-        const filteredNews = response.data.articles.filter((article) => {
+        interface Article {
+          title: string;
+          description: string | null;
+          url: string;
+          urlToImage: string | null;
+          publishedAt: string;
+        }
+
+        interface ApiResponse {
+          articles: Article[];
+        }
+
+        const filteredNews = (response.data as ApiResponse).articles.filter((article: Article) => {
           const keywords = [
             'graphic design', 'UI/UX', 'web design', 'digital art', 'art exhibitions',
             'tech innovations', 'technology startups', 'art', 'design', 'technology'

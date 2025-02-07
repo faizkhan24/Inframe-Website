@@ -11,8 +11,10 @@ import { Poppins } from "next/font/google"; // Importing Google Fonts via next/f
 import ApplyNow from "./ApplyNow";
 import Image from "next/image";
 import { useAuth0 } from "@auth0/auth0-react";
-import AOS from "aos";
+
 import "aos/dist/aos.css"; // Import the CSS for animations
+import CampusLife from "./CampusLife";
+import Aos from "aos";
 // Using the Poppins font
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,7 +24,7 @@ const poppins = Poppins({
 const AboutPage = () => {
 
   useEffect(() => {
-    AOS.init({
+    Aos.init({
       duration: 1000, // Set the duration of the animation
       easing: "ease-in-out", // Set easing for animation
       once: true, // Whether to animate only once
@@ -46,7 +48,7 @@ const AboutPage = () => {
   // }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white text-justify">
       {/* Hero Section */}
       <section className="bg-yellow-400 text-white py-32">
   <div className="container mx-auto px-4">
@@ -72,7 +74,7 @@ const AboutPage = () => {
 </section>
 
 
-      <section className="bg-black text-white py-16">
+      <section className="bg-white text-black py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left side: Heading and Image */}
@@ -91,7 +93,7 @@ const AboutPage = () => {
               <h2 className={`text-4xl font-bold mb-6 ${poppins.className}`}>
                 About Us
               </h2>
-              <p className="text-lg font-sans leading-relaxed">
+              <p className="text-lg font-sans leading-relaxed text-justify">
                 Inframe college of art, design & business is established by the
                 Inframe Educational Society under Rajasthan Societies Act 1958.
                 Inframe college of art, design and business will be one of a
@@ -116,7 +118,7 @@ const AboutPage = () => {
       </section>
 
       {/* Key Highlights Section */}
-      <section className="py-20 bg-zinc-900"
+      <section className="py-20 bg-yellow-50"
       data-aos="fade-down">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
@@ -145,7 +147,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="bg-black text-white py-16">
+      <section className="bg-white text-black py-16">
         <div className="container mx-auto px-4">
           {/* Left side: Text */}
           <div className="grid md:grid-cols-2 gap-16 items-center"
@@ -186,17 +188,17 @@ const AboutPage = () => {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 bg-black font-sans"
+      <section className="py-20 bg-white text-black font-sans"
       data-aos="fade-up">
         <div className="container mx-auto px-4">
-          <h2 className={`text-4xl font-bold mb-16 text-center text-white ${poppins.className}`}>
+          <h2 className={`text-4xl font-bold mb-16 text-center text-black ${poppins.className}`}>
              OUR CORE VALUES
           </h2>
           <div className="grid md:grid-cols-3 gap-12">
             {values.map((value, index) => (
               <Card
                 key={index}
-                className="overflow-hidden border-none shadow-lg bg-zinc-900"
+                className="overflow-hidden border-none shadow-lg bg-zinc-100 "
               >
                 <CardContent className="p-0">
                   <div className="h-48 overflow-hidden">
@@ -210,7 +212,7 @@ const AboutPage = () => {
                     <h3 className={`text-xl font-bold mb-3 text-yellow-400 ${poppins.className}`}>
                       {value.title}
                     </h3>
-                    <p className="text-gray-300">{value.description}</p>
+                    <p className="text-black">{value.description}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -219,7 +221,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="bg-black text-white py-16">
+      <section className="bg-white text-black py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-20 items-center">
             {/* Left side: Heading and Image */}
@@ -268,35 +270,8 @@ const AboutPage = () => {
       </section>
 
       {/* Campus Life Grid */}
-      <section className="py-20 bg-zinc-900 text-white"
-      >
-        <div className="container mx-auto px-4">
-          <h2
-            className={`text-4xl leading-snug md:leading-none md:text-5xl font-bold mb-16 text-center ${poppins.className}`}
-          >
-            EXPERIENCE CAMPUS LIFE
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {experienceCamputLife.map((img, index) => (
-              <div data-aos="flip-left"
-                key={index}
-                className={`relative overflow-hidden ${
-                  index === 0 ? "md:col-span-2 md:row-span-2" : ""
-                }`}
-              >
-                <img
-                  src={img}
-                  alt={`Campus Life ${index + 1}`}
-                  className="w-full h-full object-cover aspect-square"
-                />
-                <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity duration-300 hover:bg-yellow-400/20" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-black text-white py-16">
+      <CampusLife/>
+      <section className="bg-white text-black py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-36 items-center">
             {/* Left side: Heading and Image */}

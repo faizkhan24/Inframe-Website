@@ -106,7 +106,7 @@ const CounselingForm = () => {
                         />
                         {errors.name && (
                           <p className="text-red-500 text-sm mt-1">
-                            {errors.name.message}
+                            {typeof errors.name?.message === "string" && errors.name.message}
                           </p>
                         )}
                       </div>
@@ -122,7 +122,7 @@ const CounselingForm = () => {
                         />
                         {errors.phone && (
                           <p className="text-red-500 text-sm mt-1">
-                            {errors.phone.message}
+                            {typeof errors.phone?.message === "string" && errors.phone.message}
                           </p>
                         )}
                       </div>
@@ -138,7 +138,7 @@ const CounselingForm = () => {
                         />
                         {errors.email && (
                           <p className="text-red-500 text-sm mt-1">
-                            {errors.email.message}
+                            {typeof errors.email?.message === "string" && errors.email.message}
                           </p>
                         )}
                       </div>
@@ -154,7 +154,7 @@ const CounselingForm = () => {
                         />
                         {errors.city && (
                           <p className="text-red-500 text-sm mt-1">
-                            {errors.city.message}
+                            {typeof errors.city?.message === "string" && errors.city.message}
                           </p>
                         )}
                       </div>
@@ -203,7 +203,7 @@ const CounselingForm = () => {
                         </Select>
                         {errors.course && (
                           <p className="text-red-500 text-sm mt-1">
-                            {errors.course.message}
+                            {typeof errors.course?.message === "string" && errors.course.message}
                           </p>
                         )}
                       </div>

@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+'use client';
+
+import React from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
 
-// Using placeholder images with correct dimensions
 const carouselImages = [
   {
     src: "/campus images/1721366034581.jpg",
@@ -27,22 +29,8 @@ const carouselImages = [
 ];
 
 const AdmissionProcess = () => {
-  const [api, setApi] = useState(null);
-  const [current, setCurrent] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (!api || isPaused) return;
-
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [api, isPaused]);
-
   return (
-    <div className="font-sans my-20 mx-3 md:mx-0 bg-black text-white">
+    <div className="font-sans my-20 mx-3 md:mx-0 bg-white text-white">
       <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-8 rounded-lg mb-8">
         <h1 className="text-4xl text-black font-bold mb-4">
           Admission Process
@@ -53,11 +41,12 @@ const AdmissionProcess = () => {
         
         <div className="mt-4">
           <Carousel
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            setApi={setApi}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+              }),
+            ]}
             className="w-full"
-            onSelect={(index) => setCurrent(index)}
           >
             <CarouselContent>
               {carouselImages.map((image, index) => (

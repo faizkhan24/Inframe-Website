@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import {
   NavigationMenu,
@@ -13,6 +13,13 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { categories } from "@/utils/constant";
+import { Poppins } from "next/font/google";
+import { FaArrowRight } from "react-icons/fa";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 const StudyDropDown = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -85,37 +92,51 @@ const StudyDropDown = () => {
                             className="group rounded-lg border p-4 hover:bg-muted transition-colors"
                           >
                             <NavigationMenuLink asChild>
-                              <Link
-                                href={`/${item.title
-                                  .replace(/\s+/g, "-")
-                                  .toLowerCase()}`}
-                                className="block"
-                              >
-                                <div className="flex flex-col sm:flex-row gap-4">
-                                  <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="w-full sm:w-24 sm:h-24 object-cover rounded-lg"
-                                  />
-                                  <div className="flex-1">
+                              <div className="flex flex-col sm:flex-row gap-4">
+                                <img
+                                  src={item.image}
+                                  alt={item.title}
+                                  className="w-full sm:w-24 sm:h-24 object-cover rounded-lg"
+                                />
+                                <div className="flex-1">
+                                  <Link
+                                    href={`/${item.title
+                                      .replace(/\s+/g, "-")
+                                      .toLowerCase()}`}
+                                    className="block"
+                                  >
                                     <h4 className="text-sm font-medium leading-none mb-2">
                                       {item.title}
                                     </h4>
-                                    <div className="text-sm text-muted-foreground mb-2">
-                                      {item.links.map((link, index) => (
-                                        <p key={index} className="mb-1">
-                                          <Link
-                                            className="hover:text-blue-500 hover:underline"
+                                  </Link>
+                                  <div className="text-sm text-muted-foreground mb-2">
+                                    {item.links.map((link, index) => (
+                                      <p key={index} className="mb-1">
+                                        {/* <Link
+                                            // className="hover:text-blue-500 hover:underline"
                                             href={link.href}
-                                          >
-                                            {link.text}
-                                          </Link>
-                                        </p>
-                                      ))}
-                                    </div>
+                                          > */}
+                                        {link.text}
+                                        {/* </Link> */}
+                                      </p>
+                                    ))}
                                   </div>
+                                  <Link
+                                    href={`/${item.title
+                                      .replace(/\s+/g, "-")
+                                      .toLowerCase()}`}
+                                    className="block"
+                                  >
+                                 
+                                    <Button
+                                      className={`my-3 bg-yellow-400 hover:bg-yellow-500 text-black  flex items-center space-x-2 px-5 py-3 rounded-md ${poppins.className}`}
+                                    >
+                                      <span>Explore Now</span>
+                                      <FaArrowRight className="text-black" />
+                                    </Button>
+                                  </Link>
                                 </div>
-                              </Link>
+                              </div>
                             </NavigationMenuLink>
                           </div>
                         ))}

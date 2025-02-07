@@ -47,7 +47,7 @@ export default function TestimonialCarousel() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black bg-opacity-95"></div>
                   {/* Content */}
                   <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
                     <h3 className="text-2xl font-semibold mb-1">{testimonial.name}</h3>
