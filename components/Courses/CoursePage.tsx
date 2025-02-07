@@ -1,6 +1,5 @@
-// components/Courses/CoursePage.tsx
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CourseType } from "@/utils/courseTypes";
@@ -12,11 +11,20 @@ interface CoursePageProps {
 }
 
 const CoursePage: React.FC<CoursePageProps> = ({ courseType, category }) => {
-  // Add null check for empty courseType array
-  const defaultValue = courseType.length > 0 ? courseType[0].value : "";
-  const [selectedTab, setSelectedTab] = useState(defaultValue);
+  const [mounted, setMounted] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("");
 
-  // Add guard clause for empty courseType
+  useEffect(() => {
+    setMounted(true);
+    if (courseType.length > 0) {
+      setSelectedTab(courseType[0].value);
+    }
+  }, [courseType]);
+
+  if (!mounted) {
+    return null; // or a loading skeleton
+  }
+
   if (!courseType.length) {
     return (
       <div className="min-h-screen mt-24 sm:mt-0 font-sans bg-black text-white flex items-center justify-center">
@@ -24,7 +32,6 @@ const CoursePage: React.FC<CoursePageProps> = ({ courseType, category }) => {
       </div>
     );
   }
-
   return (
     <div className="min-h-screen mt-24 sm:mt-0 font-sans bg-black text-white">
       <Tabs defaultValue={selectedTab} value={selectedTab} onValueChange={setSelectedTab} className="w-full">

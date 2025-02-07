@@ -1,16 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // This helps with deployment
+  output: 'standalone',
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**', // Allows images from any HTTPS domain
-      },
-    ],
+    domains: [], // Add any image domains you're using
   },
-};
+}
 
-module.exports =  nextConfig;
+module.exports = nextConfig

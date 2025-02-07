@@ -13,7 +13,6 @@ export default async function CategoryPage({
   const { category } = await params;
   const categoryLower = category.toLowerCase();
   
-  // Get courses for the specific category
   const categoryCourses = courseTypes[categoryLower];
   
   if (!categoryCourses) {
@@ -21,6 +20,15 @@ export default async function CategoryPage({
   }
   
   return <CoursePage courseType={categoryCourses} category={categoryLower} />;
+}
+
+// Generate metadata
+export async function generateMetadata({ params }: { params: ParamsType }) {
+  const { category } = await params;
+  return {
+    title: `${category} Courses`,
+    description: `Browse our ${category} courses`,
+  };
 }
 
 export async function generateStaticParams() {
