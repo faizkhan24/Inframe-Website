@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone', // This helps with deployment
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
     remotePatterns: [
       {
