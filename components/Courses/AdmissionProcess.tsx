@@ -36,7 +36,7 @@ const AdmissionProcess = () => {
           Admission Process
         </h1>
         <p className="text-black text-xl font-medium">
-          "Join us on an exhilarating journey of creativity, innovation, and celebrity-inspired design education."
+          {`"Join us on an exhilarating journey of creativity, innovation, and celebrity-inspired design education."`}
         </p>
         
         <div className="mt-4">

@@ -10,10 +10,6 @@ import { CourseType } from "@/utils/courseTypes";
 import CourseContent from "./CourseContent";
 
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 interface CoursePageProps {
   courseType: CourseType[];

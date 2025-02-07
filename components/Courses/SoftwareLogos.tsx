@@ -27,7 +27,7 @@ const SoftwareLogos = ({ software }: SoftwareLogosProps) => {
         </h2>
         <div className=" hidden md:block md:w-96  h-1 mb-5 bg-yellow-400" ></div>
          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12">
-        {software.map((software:any) => (
+        {software.map((software) => (
           <div key={software.name} className="flex flex-col items-center">
             <div className=" flex items-center justify-center mb-4">
               <img

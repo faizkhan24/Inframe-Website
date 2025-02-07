@@ -42,11 +42,19 @@ const CounselingForm = () => {
     handleSubmit,
     formState: { errors },
     setValue,
-  } = useForm({
+  } = useForm<FormData>({
     resolver: zodResolver(CounselingFormSchema),
   });
 
-  const onSubmit = async (data: any) => {
+  interface FormData {
+    name: string;
+    phone: string;
+    email: string;
+    city: string;
+    course: string;
+  }
+
+  const onSubmit = async (data: FormData) => {
     try {
       const response = await fetch("https://formspree.io/f/mvgzgpwl", {
         method: "POST",

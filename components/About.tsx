@@ -1,16 +1,9 @@
 import React, { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-
-  highlights,
-  LOGOS,
-  studentImages,
-  values,
-} from "@/utils/constant";
+import { highlights, LOGOS, studentImages, values } from "@/utils/constant";
 import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
 import ApplyNow from "./ApplyNow";
 import Image from "next/image";
-
 
 import "aos/dist/aos.css"; // Import the CSS for animations
 import CampusLife from "./CampusLife";
@@ -22,7 +15,6 @@ const poppins = Poppins({
 });
 
 const AboutPage = () => {
-
   useEffect(() => {
     Aos.init({
       duration: 1000, // Set the duration of the animation
@@ -30,7 +22,7 @@ const AboutPage = () => {
       once: true, // Whether to animate only once
     });
   }, []);
-  
+
   // const { user, loginWithRedirect, logout, isAuthenticated,isLoading } = useAuth0();
 
   // useEffect(()=>{
@@ -51,28 +43,38 @@ const AboutPage = () => {
     <div className="min-h-screen bg-white text-justify">
       {/* Hero Section */}
       <section className="bg-yellow-400 text-white py-32">
-  <div className="container mx-auto px-4">
-    <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-8"
-    data-aos="fade-up">
-      {studentImages.map((imgUrl, i) => (
-        <div key={i} className="aspect-square">
-          <img
-            src={imgUrl}
-            alt={`University Life ${i + 1}`}
-            className="w-full h-full object-cover"
-          />
+        <div className="container mx-auto px-4">
+          <div
+            className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-8"
+            data-aos="fade-up"
+          >
+            {studentImages.map((imgUrl, i) => (
+              <div key={i} className="aspect-square">
+                <Image
+                  src={imgUrl}
+                  alt={`University Life ${i + 1}`}
+                  width={200} // Adjust as needed
+                  height={200} // Adjust as needed
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <h1
+            className={`text-4xl md:text-5xl text-black font-bold mb-4 ${poppins.className}`}
+          >
+            WHO WE ARE?
+          </h1>
+          <p className="text-lg  md:text-xl text-black font-sans">
+            Inframe is an innovative platform that blends creativity with
+            business, offering a dynamic space where art and design
+            professionals come together to shape the future. With a vibrant and
+            inclusive community, Inframe empowers creators to transform their
+            passion into a successful career while fostering a collaborative
+            environment where ideas thrive.
+          </p>
         </div>
-      ))}
-    </div>
-    <h1 className={`text-4xl md:text-5xl text-black font-bold mb-4 ${poppins.className}`}>
-      WHO WE ARE?
-    </h1>
-    <p className="text-lg  md:text-xl text-black font-sans">
-      Inframe is an innovative platform that blends creativity with business, offering a dynamic space where art and design professionals come together to shape the future. With a vibrant and inclusive community, Inframe empowers creators to transform their passion into a successful career while fostering a collaborative environment where ideas thrive.
-    </p>
-  </div>
-</section>
-
+      </section>
 
       <section className="bg-white text-black py-16">
         <div className="container mx-auto px-4">
@@ -118,8 +120,7 @@ const AboutPage = () => {
       </section>
 
       {/* Key Highlights Section */}
-      <section className="py-20 bg-yellow-50"
-      data-aos="fade-down">
+      <section className="py-20 bg-yellow-50" data-aos="fade-down">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             {highlights.map((item, index) => (
@@ -127,11 +128,14 @@ const AboutPage = () => {
                 key={index}
                 className="group relative overflow-hidden rounded-xl"
               >
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
+                  width={400} // Adjust as needed
+                  height={400} // Adjust as needed
                   className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6">
                   <span className="text-5xl font-bold text-yellow-400 mb-2">
                     {item.count}
@@ -150,8 +154,10 @@ const AboutPage = () => {
       <section className="bg-white text-black py-16">
         <div className="container mx-auto px-4">
           {/* Left side: Text */}
-          <div className="grid md:grid-cols-2 gap-16 items-center"
-          data-aos="fade-left">
+          <div
+            className="grid md:grid-cols-2 gap-16 items-center"
+            data-aos="fade-left"
+          >
             <div>
               <h2 className={`text-4xl font-bold mb-6 ${poppins.className}`}>
                 VISION
@@ -188,11 +194,15 @@ const AboutPage = () => {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 bg-white text-black font-sans"
-      data-aos="fade-up">
+      <section
+        className="py-20 bg-white text-black font-sans"
+        data-aos="fade-up"
+      >
         <div className="container mx-auto px-4">
-          <h2 className={`text-4xl font-bold mb-16 text-center text-black ${poppins.className}`}>
-             OUR CORE VALUES
+          <h2
+            className={`text-4xl font-bold mb-16 text-center text-black ${poppins.className}`}
+          >
+            OUR CORE VALUES
           </h2>
           <div className="grid md:grid-cols-3 gap-12">
             {values.map((value, index) => (
@@ -202,14 +212,18 @@ const AboutPage = () => {
               >
                 <CardContent className="p-0">
                   <div className="h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={value.image}
                       alt={value.title}
+                      width={400} // Adjust as needed
+                      height={300} // Adjust as needed
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className={`text-xl font-bold mb-3 text-yellow-400 ${poppins.className}`}>
+                    <h3
+                      className={`text-xl font-bold mb-3 text-yellow-400 ${poppins.className}`}
+                    >
                       {value.title}
                     </h3>
                     <p className="text-black">{value.description}</p>
@@ -270,7 +284,7 @@ const AboutPage = () => {
       </section>
 
       {/* Campus Life Grid */}
-      <CampusLife/>
+      <CampusLife />
       <section className="bg-white text-black py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-36 items-center">
@@ -297,7 +311,7 @@ const AboutPage = () => {
             {/* Right side: Text */}
             <div data-aos="fade-left">
               <h2 className={`text-4xl font-bold mb-6 ${poppins.className}`}>
-               CORE VALUES
+                CORE VALUES
               </h2>
               <p className="text-lg font-sans leading-relaxed">
                 Inframe college of art, design and business inculcates design
@@ -344,8 +358,7 @@ const AboutPage = () => {
                 <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 shadow-md border bg-white border-gray-200 rounded-md flex items-center justify-center">
                   <img
                     src={logo.src}
-                    alt={'not loaded'}
-                    
+                    alt={"not loaded"}
                     className="object-contain  w-full h-full"
                   />
                 </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 // Define proper types for YouTube Player API
 interface YouTubePlayer {
@@ -43,7 +43,6 @@ declare global {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, BookOpen, MapPin, Mail, Phone } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
 import IndustryPartners from "./Courses/Partners";
 import Testimonial from "./Testimonials";
 import { Poppins } from "next/font/google";
@@ -51,6 +50,7 @@ import WhyInframe from "./WhyInframe";
 import CampusLife from "./CampusLife";
 import ApplyNow from "./ApplyNow";
 import ApplyNowForm from "./ApplyNowForm";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -294,11 +294,12 @@ export default function ApplyPage() {
                 key={index}
                 className="overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-48 object-cover"
-                />
+               <Image
+                    src={course.image}
+                    alt={course.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">{course.title}</h3>
                   <div className="flex items-center gap-4 text-sm text-gray-600">
@@ -334,11 +335,12 @@ export default function ApplyPage() {
                 key={index}
                 className="overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <img
-                  src={facility.image}
-                  alt={facility.title}
-                  className="w-full h-64 object-cover"
-                />
+                <Image
+                    src={facility.image}
+                    alt={facility.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
                 <CardContent className="p-4">
                   <h3 className="text-xl font-semibold text-center">
                     {facility.title}
@@ -363,7 +365,7 @@ export default function ApplyPage() {
               Get in Touch
             </h2>
             <p className="text-lg text-gray-600">
-              Have questions? We're here to help and would love to hear from you
+              {`Have questions? We're here to help and would love to hear from you`}
             </p>
           </div>
 
