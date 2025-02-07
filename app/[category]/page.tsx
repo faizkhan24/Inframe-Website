@@ -10,12 +10,11 @@ export default function CategoryPage({
   params: { category: string };
 }) {
   const category = params.category.toLowerCase();
-  console.log('category'+category);
-  
+  console.log("category:", category);
+
   // Get courses for the specific category
   const categoryCourses = courseTypes[category];
   console.log(categoryCourses);
-  
 
   if (!categoryCourses) {
     notFound();
@@ -27,6 +26,6 @@ export default function CategoryPage({
 // Generate static params for all categories
 export async function generateStaticParams() {
   return Object.keys(courseTypes).map((category) => ({
-    category,
+    params: { category }, // Fix: Wrap `category` inside `params`
   }));
 }
