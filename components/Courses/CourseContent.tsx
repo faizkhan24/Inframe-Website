@@ -121,7 +121,7 @@ const CourseContent = ({
         <CareerProspects />
         {curriculum && <CurriculumSection curriculum={curriculum} />}
         {
-          software?.length === 0 && whatYouWillLearn ? <WhatYouWillLearn whatYouWillLearn={whatYouWillLearn} /> : <SoftwareLogos software={software} />
+          software?.length === 0 && whatYouWillLearn ? <WhatYouWillLearn whatYouWillLearn={whatYouWillLearn} /> : <SoftwareLogos software={software || []} />
         }
         
         <IndustryPartners />

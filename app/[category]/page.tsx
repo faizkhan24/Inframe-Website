@@ -5,11 +5,15 @@ import { courseTypes } from "@/utils/courseTypes";
 
 type PageProps = {
   params: Promise<{ category: string }>;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export default async function CategoryPage(props: PageProps) {
-  const params = await props.params;
+  const [params, searchParams] = await Promise.all([
+    props.params,
+    props.searchParams
+  ]);
+  
   const category = params.category.toLowerCase();
   console.log("category:", category);
   
