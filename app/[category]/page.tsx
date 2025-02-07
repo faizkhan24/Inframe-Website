@@ -4,11 +4,10 @@ import { notFound } from "next/navigation";
 import CoursePage from "@/components/Courses/CoursePage";
 import { courseTypes } from "@/utils/courseTypes";
 
+// Correctly type the props for the page component
 export default function CategoryPage({
   params,
-}: {
-  params: { category: string };
-}) {
+}: { params: { category: string } }) {
   const category = params.category.toLowerCase();
   console.log("category:", category);
 
@@ -26,6 +25,6 @@ export default function CategoryPage({
 // Generate static params for all categories
 export async function generateStaticParams() {
   return Object.keys(courseTypes).map((category) => ({
-    params: { category }, // Fix: Wrap `category` inside `params`
+    category, // No need to wrap in `params`
   }));
 }
