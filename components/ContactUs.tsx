@@ -61,7 +61,7 @@ export function ContactUsForm({
       } else {
         throw new Error("Failed to submit form");
       }
-    } catch (error) {
+    } catch (err) {
       setIsError(true);
       setIsSuccess(false);
     } finally {
