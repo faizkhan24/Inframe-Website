@@ -3,12 +3,13 @@ import { notFound } from "next/navigation";
 import CoursePage from "@/components/Courses/CoursePage";
 import { courseTypes } from "@/utils/courseTypes";
 
-export default async function CategoryPage({
-  params,
-}: {
-  params: { category: string }
-}) {
-  const category = params.category.toLowerCase();
+interface Props {
+  params: { category: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export default async function CategoryPage(props: Props) {
+  const category = props.params.category.toLowerCase();
   console.log("category:", category);
   
   // Get courses for the specific category
