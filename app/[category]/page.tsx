@@ -3,15 +3,11 @@ import { notFound } from "next/navigation";
 import CoursePage from "@/components/Courses/CoursePage";
 import { courseTypes } from "@/utils/courseTypes";
 
-// Correctly type the props using the PageProps interface
-interface PageProps {
-  params: {
-    category: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export default async function CategoryPage({ params }: PageProps) {
+export default async function CategoryPage({
+  params,
+}: {
+  params: { category: string }
+}) {
   const category = params.category.toLowerCase();
   console.log("category:", category);
   
