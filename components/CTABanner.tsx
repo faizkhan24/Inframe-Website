@@ -15,7 +15,7 @@ const CoursesCTABanner = () => {
         {/* Text Section */}
         <div className="text-center lg:text-left space-y-3 flex-1">
           <h2 className="text-2xl lg:text-4xl font-bold flex items-center justify-center lg:justify-start gap-2">
-            <span>🚀</span> Not sure what you're interested in?
+            <span>🚀</span> {`Not sure what you're interested in?`}
           </h2>
           <p className="text-sm lg:text-lg opacity-90">
             Explore a wide range of courses tailored to help you achieve your goals{" "}

@@ -1,10 +1,38 @@
 import React, { useEffect } from 'react';
 
+interface YouTubePlayer {
+  playVideo(): void;
+}
+
+interface YouTubeEvent {
+  target: YouTubePlayer;
+}
+
+interface PlayerVars {
+  autoplay: number;
+  loop: number;
+  controls: number;
+  showinfo: number;
+  rel: number;
+  enablejsapi: number;
+  modestbranding: number;
+  mute: number;
+  playlist: string;
+}
+
+interface PlayerOptions {
+  videoId: string;
+  playerVars: PlayerVars;
+  events: {
+    onReady: (event: YouTubeEvent) => void;
+  };
+}
+
 declare global {
   interface Window {
     onYouTubeIframeAPIReady: () => void;
     YT: {
-      Player: new (elementId: string, options: any) => any;
+      Player: new (elementId: string, options: PlayerOptions) => YouTubePlayer;
     };
   }
 }
@@ -22,26 +50,6 @@ const CampusTour = () => {
     const originalOnReady = window.onYouTubeIframeAPIReady;
 
     window.onYouTubeIframeAPIReady = () => {
-      interface PlayerVars {
-        autoplay: number;
-        loop: number;
-        controls: number;
-        showinfo: number;
-        rel: number;
-        enablejsapi: number;
-        modestbranding: number;
-        mute: number;
-        playlist: string;
-      }
-
-      interface PlayerOptions {
-        videoId: string;
-        playerVars: PlayerVars;
-        events: {
-          onReady: (event: { target: { playVideo: () => void } }) => void;
-        };
-      }
-
       new window.YT.Player('youtube-player', {
         videoId: 'JW0YxVpnj9o',
         playerVars: {

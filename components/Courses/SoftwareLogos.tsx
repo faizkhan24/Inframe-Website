@@ -5,7 +5,16 @@ const poppins = Poppins({
   weight: ["400", "500", "700"],
 });
 
-const SoftwareLogos = ({software}:any) => {
+interface Software {
+  name: string;
+  src: string;
+}
+
+interface SoftwareLogosProps {
+  software: Software[];
+}
+
+const SoftwareLogos = ({ software }: SoftwareLogosProps) => {
  
   
     return (

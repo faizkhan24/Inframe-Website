@@ -48,19 +48,36 @@ const ReelCard = () => {
             Follow Us on Social Media
           </h1>
           <p className="text-gray-300 text-lg mb-6">
-            Stay updated with the latest trends, reels, and stories by following our social media channels.
+            Stay updated with the latest trends, reels, and stories by following
+            our social media channels.
           </p>
           <div className="flex space-x-6 mt-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Instagram className="text-white w-10 h-10 hover:text-pink-500 transition-transform duration-300 transform hover:scale-110" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Twitter className="text-white w-10 h-10 hover:text-blue-400 transition-transform duration-300 transform hover:scale-110" />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Youtube className="text-white w-10 h-10 hover:text-red-600 transition-transform duration-300 transform hover:scale-110" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Facebook className="text-white w-10 h-10 hover:text-blue-600 transition-transform duration-300 transform hover:scale-110" />
             </a>
           </div>
@@ -96,15 +113,18 @@ const ReelCard = () => {
                     src="\96252855_545538459478510_4060708075890278400_n.jpg"
                     className="w-12 h-12 rounded-full mr-3 border-2 border-gray-800"
                   />
-                  <Link  href={'https://www.instagram.com/inframecollege/?hl=en'} >
-                  <p className="font-semibold mr-2">inframecollege</p>
+                  <Link
+                    href={"https://www.instagram.com/inframecollege/?hl=en"}
+                  >
+                    <p className="font-semibold mr-2">inframecollege</p>
                   </Link>
-                  <Link href={'https://www.instagram.com/inframecollege/?hl=en'} >
-                      <Button className="text-black bg-white font-sans font-bold hover:bg-gray-200 py-1 px-4 shadow-md">
-                    Follow
-                  </Button>
+                  <Link
+                    href={"https://www.instagram.com/inframecollege/?hl=en"}
+                  >
+                    <Button className="text-black bg-white font-sans font-bold hover:bg-gray-200 py-1 px-4 shadow-md">
+                      Follow
+                    </Button>
                   </Link>
-              
                 </div>
                 <p className="mb-2">Trees, fogs, and mountains⛰️🌳</p>
                 <p className="flex items-center text-sm">
@@ -116,14 +136,13 @@ const ReelCard = () => {
               </div>
 
               <div className="flex flex-col items-center space-y-6">
-                <button onClick={()=>{
-                  isredHeart ? setIsredHeart(false) : setIsredHeart(true)
-                }} className="text-white hover:text-red-500 transition-transform duration-300 transform hover:scale-125">
-                  {
-                    isredHeart ? <Heart fill="red"/> : <Heart />
-                  }
-                  
+                <button
+                  onClick={() => setIsredHeart((prev) => !prev)}
+                  className="text-white hover:text-red-500 transition-transform duration-300 transform hover:scale-125"
+                >
+                  {isredHeart ? <Heart fill="red" /> : <Heart />}
                 </button>
+
                 <button className="text-white transform scale-x-[-1] hover:text-blue-500 transition-transform duration-300 transform hover:scale-125">
                   <MessageCircle />
                 </button>

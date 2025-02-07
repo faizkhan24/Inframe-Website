@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Play, ArrowRight, X } from "lucide-react";
+import { ChevronRight, ArrowRight} from "lucide-react";
 
 import { Poppins } from 'next/font/google';
 import CampusLife from '@/components/CampusLife';
@@ -107,13 +107,13 @@ const LifeAtCampus = () => {
             <div>
               <h2 className="text-4xl font-bold mb-6 text-black">Welcome to Campus Life</h2>
               <p className="text-lg text-gray-600 mb-6 text-justify">
-                Our campus is more than just buildings and classrooms – it's a thriving ecosystem 
-                where ideas flourish, friendships form, and futures take shape.
+                {`Our campus is more than just buildings and classrooms – it's a thriving ecosystem 
+                where ideas flourish, friendships form, and futures take shape.`}
               </p>
               <p className="text-lg text-gray-600 mb-6 text-justify">
-                Whether you're pursuing academic excellence, exploring new interests through clubs 
+               {` Whether you're pursuing academic excellence, exploring new interests through clubs 
                 and societies, or developing leadership skills, our campus provides the perfect 
-                environment for your growth and success.
+                environment for your growth and success.`}
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">

@@ -36,15 +36,6 @@ const LatestNews = () => {
         // Log the response to check if the API is providing relevant data
         console.log(response.data);
 
-        // Now, filter the news on both title and description
-        interface Article {
-          title: string;
-          description: string | null;
-          url: string;
-          urlToImage: string | null;
-          publishedAt: string;
-        }
-
         interface ApiResponse {
           articles: Article[];
         }
@@ -63,7 +54,7 @@ const LatestNews = () => {
 
         setNews(filteredNews);
         setLoading(false);
-      } catch (error) {
+      } catch {
         setError("Error fetching news");
         setLoading(false);
       }

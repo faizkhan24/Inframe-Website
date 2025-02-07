@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 interface CurriculumData {
   image: string;
   imageAlt: string;
-  [key: string]: any;
+ 
 }
 
 interface Curriculum {
@@ -16,8 +16,6 @@ const CurriculumSection = ({ curriculum }: { curriculum: Curriculum }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 bg-white">
       <h2 className="text-3xl font-bold mb-8 text-yellow-400">Course Curriculum</h2>
-
-      
 
       {/* Tabs for Year selection */}
       <Tabs defaultValue="1st Year" className="w-full">
@@ -51,36 +49,40 @@ const CurriculumSection = ({ curriculum }: { curriculum: Curriculum }) => {
               {/* Tabs for Semester selection */}
               <Tabs defaultValue="Semester 1" className="w-full">
                 <TabsList className="md:w-full flex flex-wrap mb-16 rounded-lg bg-zinc-200 p-1 gap-2">
-                  {Object.keys(data).filter((key) => key.includes("Semester")).map((semester) => (
-                    <TabsTrigger
-                      key={semester}
-                      value={semester}
-                      className="flex-1 data-[state=active]:bg-yellow-400 data-[state=active]:text-black"
-                    >
-                      {semester}
-                    </TabsTrigger>
-                  ))}
+                  {Object.keys(data)
+                    .filter((key) => key.includes("Semester"))
+                    .map((semester) => (
+                      <TabsTrigger
+                        key={semester}
+                        value={semester}
+                        className="flex-1 data-[state=active]:bg-yellow-400 data-[state=active]:text-black"
+                      >
+                        {semester}
+                      </TabsTrigger>
+                    ))}
                 </TabsList>
 
                 {/* Content for each Semester */}
-                {Object.entries(data).filter(([key]) => key.includes("Semester")).map(([semester, subjects]) => (
-                  <TabsContent key={semester} value={semester}>
-                    <Card className="bg-zinc-white border-none">
-                      <CardContent className="p-6">
-                        <div className="grid gap-4">
-                          {subjects.map((subject:any, index:any) => (
-                            <div
-                              key={index}
-                              className="p-4 bg-yellow-400 rounded-lg hover:bg-yellow-500 transition-colors"
-                            >
-                              <p className="text-black font-bold">{subject}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </TabsContent>
-                ))}
+                {Object.entries(data)
+                  .filter(([key]) => key.includes("Semester"))
+                  .map(([semester, subjects]) => (
+                    <TabsContent key={semester} value={semester}>
+                      <Card className="bg-zinc-white border-none">
+                        <CardContent className="p-6">
+                          <div className="grid gap-4">
+                            {(subjects as string[]).map((subject, index) => (
+                              <div
+                                key={index}
+                                className="p-4 bg-yellow-400 rounded-lg hover:bg-yellow-500 transition-colors"
+                              >
+                                <p className="text-black font-bold">{subject}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </TabsContent>
+                  ))}
               </Tabs>
             </div>
           </TabsContent>

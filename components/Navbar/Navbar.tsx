@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ChevronDown, Menu } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
