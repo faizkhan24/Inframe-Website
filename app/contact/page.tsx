@@ -3,7 +3,7 @@ import { ContactUsForm } from "@/components/ContactUs";
 
 import "@/components/style.css";
 
-import { Poppins } from "next/font/google";
+
 import ReelCard from "@/components/ReelCard";
 import ApplyNow from "@/components/ApplyNow";
 

@@ -2,46 +2,84 @@
 
 import React, { useState, useEffect, useRef } from "react";
 
+// Define proper types for YouTube Player API
+interface YouTubePlayer {
+  playVideo(): void;
+}
+
+interface YouTubeEvent {
+  target: YouTubePlayer;
+}
+
+interface PlayerVars {
+  autoplay: number;
+  loop: number;
+  controls: number;
+  showinfo: number;
+  rel: number;
+  enablejsapi: number;
+  modestbranding: number;
+  mute: number;
+  playlist: string;
+}
+
+interface PlayerOptions {
+  videoId: string;
+  playerVars: PlayerVars;
+  events: {
+    onReady: (event: YouTubeEvent) => void;
+  };
+}
+
 declare global {
   interface Window {
     onYouTubeIframeAPIReady: () => void;
     YT: {
-      Player: new (elementId: string, options: any) => any;
+      Player: new (elementId: string, options: PlayerOptions) => YouTubePlayer;
     };
   }
 }
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
-
-import { Users,  Trophy, BookOpen, MapPin, Mail, Phone } from "lucide-react";
+import { Users, BookOpen, MapPin, Mail, Phone } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import IndustryPartners from "./Courses/Partners";
-
 import Testimonial from "./Testimonials";
 import { Poppins } from "next/font/google";
 import WhyInframe from "./WhyInframe";
 import CampusLife from "./CampusLife";
 import ApplyNow from "./ApplyNow";
-
 import ApplyNowForm from "./ApplyNowForm";
-
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
-declare global {
-  interface Window {
-    onYouTubeIframeAPIReady: () => void;  // Keep it as a required function
-    YT: {
-      Player: new (elementId: string, options: any) => any;
-    };
-  }
+interface Contact {
+  icon: React.ReactNode;
+  title: string;
+  info: string;
+  info2?: string;
+  description?: string;
+  bgColor: string;
+  hoverColor: string;
 }
 
-const contacts = [
+interface Course {
+  title: string;
+  duration: string;
+  type: string;
+  image: string;
+}
+
+interface Facility {
+  title: string;
+  image: string;
+}
+
+const contacts: Contact[] = [
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Call Us",
@@ -73,7 +111,6 @@ export default function ApplyPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pluginRef = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
 
-  // YouTube player effect
   useEffect(() => {
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -82,30 +119,9 @@ export default function ApplyPage() {
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     }
 
-    // Store the original function if it exists
     const originalFunction = window.onYouTubeIframeAPIReady;
 
     window.onYouTubeIframeAPIReady = () => {
-      interface PlayerVars {
-        autoplay: number;
-        loop: number;
-        controls: number;
-        showinfo: number;
-        rel: number;
-        enablejsapi: number;
-        modestbranding: number;
-        mute: number;
-        playlist: string;
-      }
-
-      interface PlayerOptions {
-        videoId: string;
-        playerVars: PlayerVars;
-        events: {
-          onReady: (event: { target: { playVideo: () => void } }) => void;
-        };
-      }
-
       new window.YT.Player('youtube-player', {
         videoId: 'JW0YxVpnj9o',
         playerVars: {
@@ -124,16 +140,14 @@ export default function ApplyPage() {
             event.target.playVideo();
           }
         }
-      } as PlayerOptions);
+      });
     };
 
     return () => {
-      // Restore the original function or set to a no-op function
       window.onYouTubeIframeAPIReady = originalFunction || (() => {});
     };
   }, []);
 
-  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -150,8 +164,44 @@ export default function ApplyPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const courses: Course[] = [
+    {
+      title: "B.Des Fashion Design",
+      duration: "4 Years",
+      type: "Full Time",
+      image: "https://images.unsplash.com/photo-1537832816519-689ad163238b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    },
+    {
+      title: "Diploma in Interior Design",
+      duration: "1 Year",
+      type: "Full Time",
+      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    },
+    {
+      title: "Advanced Product Design",
+      duration: "3 Years",
+      type: "Full Time",
+      image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    }
+  ];
+
+  const facilities: Facility[] = [
+    {
+      title: "Design Studios",
+      image: "/campus images/DSC04140.jpg"
+    },
+    {
+      title: "Computer Labs",
+      image: "/campus images/1719471947426.jpg"
+    },
+    {
+      title: "Exhibition Spaces",
+      image: "/campus images/DSC04267.jpg"
+    }
+  ];
+
   return (
-    <div className="flex flex-col min-h-screen relative ">
+    <div className="flex flex-col min-h-screen relative">
       {/* Enquiry Form Sheet */}
       <ApplyNowForm 
         isFormOpen={isFormOpen}
@@ -161,81 +211,63 @@ export default function ApplyPage() {
 
       {/* Hero Section */}
       <section id="home" className="relative h-screen overflow-hidden">
-      {/* YouTube Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10" /> {/* Overlay */}
-        <div className="absolute inset-0 scale-150">
-          <div id="youtube-player" className="w-full h-full pointer-events-none" />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center">
-        <div className="max-w-3xl opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
-          <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 leading-tight transform translate-y-4 opacity-0 animate-[fadeIn_1s_ease-out_0.3s_forwards] ${poppins.className}`}>
-            Shape Your Future
-            <br />
-            in Design & Innovation
-          </h1>
-          <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl transform translate-y-4 opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
-            Join India's premier design institute and unlock your creative potential with industry-leading programs and expert mentorship.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 transform translate-y-4 opacity-0 animate-[fadeIn_1s_ease-out_0.9s_forwards]">
-            <Button 
-              className={`bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 h-14 text-lg ${poppins.className}`}
-              onClick={() => setIsFormOpen(true)}
-            >
-              Apply Now
-            </Button>
-            <Button 
-              variant="outline" 
-              className={`bg-white/10 hover:bg-white/20 text-white border-white h-14 text-lg ${poppins.className}`}
-            >
-              Learn More
-            </Button>
+        {/* YouTube Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-black/50 z-10" />
+          <div className="absolute inset-0 scale-150">
+            <div id="youtube-player" className="w-full h-full pointer-events-none" />
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-8 h-12 rounded-full border-2 border-white/60 flex items-center justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full" />
+        {/* Content */}
+        <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center">
+          <div className="max-w-3xl opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
+            <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 leading-tight transform translate-y-4 opacity-0 animate-[fadeIn_1s_ease-out_0.3s_forwards] ${poppins.className}`}>
+              Shape Your Future
+              <br />
+              in Design & Innovation
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl transform translate-y-4 opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
+              Join India's premier design institute and unlock your creative potential with industry-leading programs and expert mentorship.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 transform translate-y-4 opacity-0 animate-[fadeIn_1s_ease-out_0.9s_forwards]">
+              <Button 
+                className={`bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 h-14 text-lg ${poppins.className}`}
+                onClick={() => setIsFormOpen(true)}
+              >
+                Apply Now
+              </Button>
+              <Button 
+                variant="outline" 
+                className={`bg-white/10 hover:bg-white/20 text-white border-white h-14 text-lg ${poppins.className}`}
+              >
+                Learn More
+              </Button>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <div className="w-8 h-12 rounded-full border-2 border-white/60 flex items-center justify-center">
+              <div className="w-1 h-3 bg-white/60 rounded-full" />
+            </div>
           </div>
         </div>
-      </div>
-
-      <style jsx global>{`
-        #youtube-player {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 100vw;
-          height: 100vh;
-          pointer-events: none;
-        }
-        
-        #youtube-player iframe {
-          width: 100vw;
-          height: 100vh;
-          pointer-events: none;
-        }
-      `}</style>
-    </section>
+      </section>
 
       {/* Placement Partners */}
-      <section className="py-20 max-w-7xl mx-auto  text-center">
-       <IndustryPartners/>
+      <section className="py-20 max-w-7xl mx-auto text-center">
+        <IndustryPartners />
       </section>
 
       {/* Student Testimonials */}
       <section className="py-20 bg-white">
-      <Testimonial/>
+        <Testimonial />
       </section>
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
-        <WhyInframe/>
+        <WhyInframe />
       </section>
 
       {/* Courses Offered */}
@@ -246,26 +278,7 @@ export default function ApplyPage() {
             Choose from our wide range of specialized design programs
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "B.Des Fashion Design",
-                duration: "4 Years",
-                type: "Full Time",
-                image: "https://images.unsplash.com/photo-1537832816519-689ad163238b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
-              },
-              {
-                title: "Diploma in Interior Design",
-                duration: "1 Year",
-                type: "Full Time",
-                image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
-              },
-              {
-                title: "Advanced Product Design",
-                duration: "3 Years",
-                type: "Full Time",
-                image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
-              }
-            ].map((course, index) => (
+            {courses.map((course, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <img 
                   src={course.image}
@@ -300,20 +313,7 @@ export default function ApplyPage() {
             Experience learning in state-of-the-art facilities
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Design Studios",
-                image: "/campus images/DSC04140.jpg"
-              },
-              {
-                title: "Computer Labs",
-                image: "/campus images/1719471947426.jpg"
-              },
-              {
-                title: "Exhibition Spaces",
-                image: "/campus images/DSC04267.jpg"
-              }
-            ].map((facility, index) => (
+            {facilities.map((facility, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <img 
                   src={facility.image}
@@ -330,50 +330,50 @@ export default function ApplyPage() {
       </section>
 
       {/* Life at Institute */}
-      <CampusLife/>
+      <CampusLife />
 
       {/* Contact Section */}
       <section className={`py-24 bg-gradient-to-b from-gray-50 to-white ${poppins.className}`}>
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Get in Touch
-          </h2>
-          <p className="text-lg text-gray-600">
-            Have questions? We're here to help and would love to hear from you
-          </p>
-        </div>
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Get in Touch
+            </h2>
+            <p className="text-lg text-gray-600">
+              Have questions? We're here to help and would love to hear from you
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {contacts.map((contact, index) => (
-            <div
-              key={index}
-              className="group transform hover:-translate-y-2 transition-all duration-300"
-            >
-              <Card className="h-full border shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-8 flex flex-col items-center text-center">
-                  <div className={`w-16 h-16 ${contact.bgColor} ${contact.hoverColor} rounded-full mb-6 flex items-center justify-center text-white transform transition-all duration-300 group-hover:scale-110`}>
-                    {contact.icon}
-                  </div>
-                  
-                  <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                    {contact.title}
-                  </h3>
-                  
-                  <div className="space-y-2">
-                    <p className="text-lg font-medium text-gray-700">
-                      {contact.info}
-                    </p>
-                    {contact.info2 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {contacts.map((contact, index) => (
+              <div
+                key={index}
+                className="group transform hover:-translate-y-2 transition-all duration-300"
+              >
+                <Card className="h-full border shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-8 flex flex-col items-center text-center">
+                    <div className={`w-16 h-16 ${contact.bgColor} ${contact.hoverColor} rounded-full mb-6 flex items-center justify-center text-white transform transition-all duration-300 group-hover:scale-110`}>
+                      {contact.icon}
+                    </div>
+                    
+                    <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                      {contact.title}
+                    </h3>
+                    
+                    <div className="space-y-2">
                       <p className="text-lg font-medium text-gray-700">
-                        {contact.info2}
+                        {contact.info}
                       </p>
-                    )}
-                    <p className="text-sm text-gray-500 mt-2 leading-relaxed">
-                      {contact.description}
-                    </p>
-                  </div>
-                </CardContent>
+                      {contact.info2 && (
+                        <p className="text-lg font-medium text-gray-700">
+                          {contact.info2}
+                        </p>
+                      )}
+                      <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+                        {contact.description}
+                      </p>
+                    </div>
+                  </CardContent>
               </Card>
             </div>
           ))}
