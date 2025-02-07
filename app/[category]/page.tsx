@@ -3,11 +3,15 @@ import { notFound } from "next/navigation";
 import CoursePage from "@/components/Courses/CoursePage";
 import { courseTypes } from "@/utils/courseTypes";
 
+interface CategoryPageProps {
+  params: { category: string };
+  searchParams: Record<string, string | string[] | undefined>;
+}
+
 export default function CategoryPage({
   params,
-}: {
-  params: { category: string }
-}) {
+  searchParams, // Include this even if unused to match Next.js types
+}: CategoryPageProps) {
   const category = params.category.toLowerCase();
   console.log("category:", category);
   
