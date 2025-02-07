@@ -61,10 +61,11 @@ export function ContactUsForm({
       } else {
         throw new Error("Failed to submit form");
       }
-    } catch (err) {
-      setIsError(true);
-      setIsSuccess(false);
-    } finally {
+    } catch {
+  setIsError(true);
+  setIsSuccess(false);
+}
+ finally {
       setIsSubmitting(false);
     }
   };
