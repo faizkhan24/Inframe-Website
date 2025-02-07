@@ -1,38 +1,30 @@
 // app/[category]/page.tsx
-import { Metadata } from 'next'
 import { notFound } from "next/navigation";
 import CoursePage from "@/components/Courses/CoursePage";
 import { courseTypes } from "@/utils/courseTypes";
 
-interface Props {
-  params: {
-    category: string;
-  };
-}
+type ParamsType = Promise<{ category: string }>;
 
-// This is important for Next.js 13+ typing
-export default async function CategoryPage({ params }: Props) {
-  const category = params.category.toLowerCase();
+export default async function CategoryPage({
+  params,
+}: {
+  params: ParamsType;
+}) {
+  const { category } = await params;
+  const categoryLower = category.toLowerCase();
   
   // Get courses for the specific category
-  const categoryCourses = courseTypes[category];
+  const categoryCourses = courseTypes[categoryLower];
   
   if (!categoryCourses) {
     notFound();
   }
   
-  return <CoursePage courseType={categoryCourses} category={category} />;
+  return <CoursePage courseType={categoryCourses} category={categoryLower} />;
 }
 
-// Generate static params
 export async function generateStaticParams() {
   return Object.keys(courseTypes).map((category) => ({
     category,
   }));
-}
-
-// Optional: Add metadata
-export const metadata: Metadata = {
-  title: 'Courses',
-  description: 'Browse our courses by category',
 }
