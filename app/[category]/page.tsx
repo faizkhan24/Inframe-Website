@@ -3,17 +3,11 @@ import { notFound } from "next/navigation";
 import CoursePage from "@/components/Courses/CoursePage";
 import { courseTypes } from "@/utils/courseTypes";
 
-type PageProps = {
-  params: Promise<{ category: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
-
-export default async function CategoryPage(props: PageProps) {
-  const [params, searchParams] = await Promise.all([
-    props.params,
-    props.searchParams
-  ]);
-  
+export default function CategoryPage({
+  params,
+}: {
+  params: { category: string }
+}) {
   const category = params.category.toLowerCase();
   console.log("category:", category);
   
@@ -28,7 +22,6 @@ export default async function CategoryPage(props: PageProps) {
   return <CoursePage courseType={categoryCourses} category={category} />;
 }
 
-// Generate static params for all categories
 export async function generateStaticParams() {
   return Object.keys(courseTypes).map((category) => ({
     category,
