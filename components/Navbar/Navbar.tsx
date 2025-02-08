@@ -1,22 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, Menu } from "lucide-react";
+
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { INFRAME_LOGO } from "@/utils/constant";
+import { INFRAME_LOGO } from "../../utils/constant";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import StudyDropDown from "./StudyDropDown";
-import { useAuth0 } from "@auth0/auth0-react";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-} from "../ui/dropdown-menu"; // ShadCN Dropdown
+
+
 import { Poppins } from "next/font/google";
+import { Menu } from "lucide-react";
 
 
 const poppins = Poppins({
@@ -26,11 +21,11 @@ const poppins = Poppins({
 
 const Navbar = () => {
   const [openSheet, setOpenSheet] = useState(false); // State for controlling the sheet
-  const { user, loginWithRedirect, logout, isAuthenticated, } = useAuth0();
+  // const { user, loginWithRedirect, logout, isAuthenticated, } = useAuth0();
 
   
 
-  console.log(user);
+  // console.log(user);
 
   return (
     <header className="fixed w-full bg-black/80 backdrop-blur-sm z-50 py-4 font-sans">
@@ -59,7 +54,7 @@ const Navbar = () => {
                 About
               </Link>
               <Link
-                href={'/life@inframe'}
+                href={'/lifeatinframe'}
                 className="text-muted-foreground text-white font-bold"
               >
                 Life @ Inframe
@@ -74,7 +69,6 @@ const Navbar = () => {
 
             
 
-            {isAuthenticated ? (
 
               <div className="flex gap-8">
                 <Link href={'/applynow'}>
@@ -89,7 +83,7 @@ const Navbar = () => {
               </Button>
                 </Link>
                
-                <DropdownMenu>
+                {/* <DropdownMenu>
                 <DropdownMenuTrigger>
                   <div className="flex items-center gap-2 cursor-pointer">
                     <img
@@ -112,7 +106,7 @@ const Navbar = () => {
                     Log Out
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */}
               </div>
               
             ) : (
@@ -130,15 +124,15 @@ const Navbar = () => {
               </Button>
               </Link>
                 {/* Sign Up Button */}
-                <Button
+                {/* <Button
                   onClick={() => loginWithRedirect()}
                   variant="outline"
                   className={`text-black py-5  px-9 bg-yellow-300 hover:bg-yellow-400 font-bold ${poppins.className}`}
                 >
                   Login
-                </Button>
+                </Button> */}
               </>
-            )}
+            {/* )} */}
           </div>
 
           {/* Mobile View Hamburger Button */}
@@ -183,7 +177,7 @@ const Navbar = () => {
             </div>
 
             {/* Authentication Section */}
-            <div className="mt-auto mb-8">
+            {/* <div className="mt-auto mb-8">
               {isAuthenticated ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger className="w-full">
@@ -232,7 +226,7 @@ const Navbar = () => {
                   </Button>
                 </div>
               )}
-            </div>
+            </div> */}
           </nav>
         </SheetContent>
       </Sheet>

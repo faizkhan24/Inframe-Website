@@ -1,9 +1,9 @@
 import React from 'react';
 import { ThumbsUp, Share2, MessageCircle } from 'lucide-react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
-import { VideosType } from '@/utils/courseTypes';
+import { Card, CardContent } from "../../components/ui/card";
+import { Button } from "../../components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "../../components/ui/tooltip";
+import { VideosType } from '../../utils/courseTypes';
 import { Poppins } from 'next/font/google';
 
 const poppins = Poppins({

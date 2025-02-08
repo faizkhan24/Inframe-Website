@@ -40,8 +40,8 @@ declare global {
   }
 }
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
 import { Users, BookOpen, MapPin, Mail, Phone } from "lucide-react";
 import IndustryPartners from "./Courses/Partners";
 import Testimonial from "./Testimonials";
@@ -112,57 +112,59 @@ export default function ApplyPage() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const tag = document.createElement("script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName("script")[0];
-    if (firstScriptTag.parentNode) {
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    if (typeof window !== "undefined") {
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
+  
+      window.onYouTubeIframeAPIReady = () => {
+        if (window.YT) {
+          new window.YT.Player("youtube-player", {
+            videoId: "JW0YxVpnj9o",
+            playerVars: {
+              autoplay: 1,
+              loop: 1,
+              mute: 1,
+              controls: 1,
+              showinfo: 0,
+              rel: 0,
+              enablejsapi: 1,
+              modestbranding: 1,
+              playlist: "JW0YxVpnj9o",
+            },
+            events: { onReady: (event) => event.target.playVideo() },
+          });
+        }
+      };
     }
-
-    const originalFunction = window.onYouTubeIframeAPIReady;
-
-    window.onYouTubeIframeAPIReady = () => {
-      new window.YT.Player("youtube-player", {
-        videoId: "JW0YxVpnj9o",
-        playerVars: {
-          autoplay: 1,
-          loop: 1,
-          controls: 0,
-          showinfo: 0,
-          rel: 0,
-          enablejsapi: 1,
-          modestbranding: 1,
-          mute: 1,
-          playlist: "JW0YxVpnj9o",
-        },
-        events: {
-          onReady: (event) => {
-            event.target.playVideo();
-          },
-        },
-      });
-    };
-
+  
     return () => {
-      window.onYouTubeIframeAPIReady = originalFunction || (() => {});
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 100) {
-        setIsScrolled(true);
-        setIsFormOpen(false);
-      } else {
-        setIsScrolled(false);
-        setIsFormOpen(true);
+      if (typeof window !== "undefined") {
+        window.onYouTubeIframeAPIReady = () => {};
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
+  
+  
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        if (window.scrollY > 100) {
+          if (!isScrolled) setIsScrolled(true);
+          if (isFormOpen) setIsFormOpen(false);
+        } else {
+          if (isScrolled) setIsScrolled(false);
+          if (!isFormOpen) setIsFormOpen(true);
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [isScrolled, isFormOpen]);
+  
 
   const courses: Course[] = [
     {

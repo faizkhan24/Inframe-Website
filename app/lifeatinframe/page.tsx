@@ -1,5 +1,6 @@
-import LifeAtCampus from '@/components/LifeAtInframePage'
+ 
 import React from 'react'
+import {LifeAtCampus} from '../../components/LifeAtInframePage'
 
 const page = () => {
   return (

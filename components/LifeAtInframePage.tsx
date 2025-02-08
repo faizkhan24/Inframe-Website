@@ -1,25 +1,25 @@
-'use client'
+
 
 import Image from 'next/image';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import { ChevronRight, ArrowRight} from "lucide-react";
 
 import { Poppins } from 'next/font/google';
-import CampusLife from '@/components/CampusLife';
-import ModernGallery from '@/components/CampusGallery';
+import CampusLife from '../components/CampusLife';
+import ModernGallery from '../components/CampusGallery';
 
-import "@/components/style.css";
-import SportsArena from '@/components/SportsArena';
-import StudentClubs from '@/components/StudentClubs';
-import CampusTour from '@/components/CampusTour';
+import "../components/style.css";
+import SportsArena from '../components/SportsArena';
+import StudentClubs from '../components/StudentClubs';
+import CampusTour from '../components/CampusTour';
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
-const LifeAtCampus = () => {
+export const LifeAtCampus = () => {
 
 
 
@@ -85,11 +85,11 @@ const LifeAtCampus = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-1.5 h-12 bg-yellow-500" />
                 <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
-                  LIFE @ INFRAME
+                  {`LIFE @ INFRAME`}
                 </h1>
               </div>
               <p className="text-xl text-white/80 max-w-2xl">
-                Discover a vibrant community where learning, innovation, and personal growth intersect
+                {`Discover a vibrant community where learning, innovation, and personal growth intersect`}
               </p>
             </div>
           </div>
@@ -105,7 +105,7 @@ const LifeAtCampus = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6 text-black">Welcome to Campus Life</h2>
+              <h2 className="text-4xl font-bold mb-6 text-black">{`Welcome to Campus Life`}</h2>
               <p className="text-lg text-gray-600 mb-6 text-justify">
                 {`Our campus is more than just buildings and classrooms – it's a thriving ecosystem 
                 where ideas flourish, friendships form, and futures take shape.`}
@@ -183,7 +183,7 @@ const LifeAtCampus = () => {
       <CampusLife/>
 
       {/* Student Clubs Section */}
-      <StudentClubs/>
+      {/* <StudentClubs/> */}
 
 
       <div className="bg bg2  "></div>
@@ -257,5 +257,3 @@ const LifeAtCampus = () => {
     </div>
   );
 };
-
-export default LifeAtCampus;

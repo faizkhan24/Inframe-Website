@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { programs } from "@/utils/constant";
+} from "../components/ui/dialog";
+import { programs } from "../utils/constant";
 import { ChevronDown } from "lucide-react";
 
 

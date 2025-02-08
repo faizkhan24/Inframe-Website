@@ -6,10 +6,10 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "../components/ui/carousel";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import Image from "next/image";
-import { courses } from "@/utils/constant";
+import { courses } from "../utils/constant";
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "./ui/button";
 import { BookOpen, Globe, Star } from "lucide-react";

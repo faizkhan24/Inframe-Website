@@ -1,4 +1,4 @@
-import { experienceCamputLife } from '@/utils/constant'
+import { experienceCamputLife } from '../utils/constant'
 import { Poppins } from 'next/font/google';
 import React from 'react'
 

@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { highlights, LOGOS, studentImages, values } from "@/utils/constant";
+import { Card, CardContent } from "../components/ui/card";
+import { highlights, LOGOS, studentImages, values } from "../utils/constant";
 import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
 import ApplyNow from "./ApplyNow";
 import Image from "next/image";
@@ -17,13 +17,14 @@ const poppins = Poppins({
 
 const AboutPage = () => {
   useEffect(() => {
-    Aos.init({
-      duration: 1000, // Set the duration of the animation
-      easing: "ease-in-out", // Set easing for animation
-      once: true, // Whether to animate only once
-    });
+  
+      Aos.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+ 
   }, []);
-
   // const { user, loginWithRedirect, logout, isAuthenticated,isLoading } = useAuth0();
 
   // useEffect(()=>{

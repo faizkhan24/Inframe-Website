@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { Card } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem } from "../components/ui/carousel";
+import { Card } from "../components/ui/card";
 import Image from "next/image";
-import { testimonials } from "@/utils/constant";
+import { testimonials } from "../utils/constant";
 import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
 import Autoplay from "embla-carousel-autoplay";
 

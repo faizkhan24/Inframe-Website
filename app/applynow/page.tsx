@@ -1,4 +1,4 @@
-import ApplyPage from '@/components/ApplyNowPage'
+import ApplyPage from '../../components/ApplyNowPage'
 
 import React from 'react'
 

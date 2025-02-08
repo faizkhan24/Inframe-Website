@@ -1,5 +1,5 @@
 'use client'
-import AboutPage from '@/components/About'
+import AboutPage from '../../components/About'
 
 
 

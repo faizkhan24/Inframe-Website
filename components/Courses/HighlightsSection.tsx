@@ -1,6 +1,6 @@
 import React from "react";
 import { GraduationCap, Clock, BookOpen } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 
 interface HighlightCardProps {
   icon: React.ComponentType<{ className?: string }>;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 
 const ApplyNowForm = () => (
   <div className="bg-zinc-100  p-8 mx-3 md:mx-0 rounded-xl">

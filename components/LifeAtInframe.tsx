@@ -2,7 +2,7 @@ import React from "react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
-import { cards } from "@/utils/constant";
+import { cards } from "../utils/constant";
 import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
 
 // Using the Poppins font

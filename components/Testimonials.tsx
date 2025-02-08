@@ -1,6 +1,6 @@
 "use client"
 
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+import { Carousel, CarouselContent, CarouselItem } from "../components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 import { Poppins } from "next/font/google";
 import { useRef } from "react"

@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CourseType } from "@/utils/courseTypes";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../components/ui/select";
+import { CourseType } from "../../utils/courseTypes";
 import CourseContent from "./CourseContent";
 
 interface CoursePageProps {
@@ -16,7 +16,7 @@ const CoursePage: React.FC<CoursePageProps> = ({ courseType, category }) => {
 
   useEffect(() => {
     setMounted(true);
-    if (courseType.length > 0) {
+    if (courseType?.length > 0) {
       setSelectedTab(courseType[0].value);
     }
   }, [courseType]);
@@ -25,7 +25,7 @@ const CoursePage: React.FC<CoursePageProps> = ({ courseType, category }) => {
     return null; // or a loading skeleton
   }
 
-  if (!courseType.length) {
+  if (!courseType?.length) {
     return (
       <div className="min-h-screen mt-24 sm:mt-0 font-sans bg-black text-white flex items-center justify-center">
         <p>No courses available for this category.</p>

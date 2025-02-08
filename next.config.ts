@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
-  reactStrictMode: true,
-  swcMinify: true,
+  
   images: {
-    domains: [], // Add any image domains you're using
+    domains: ['miro.medium.com','s3files.core77.com','buffer.com','weandthecolor.com','weandthecolor.com','image.cnbcfm.com'], // Add any image domains you're using
   },
 }
 

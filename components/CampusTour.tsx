@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from 'react';
 
 interface YouTubePlayer {
@@ -39,44 +40,45 @@ declare global {
 
 const CampusTour = () => {
   useEffect(() => {
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    if (firstScriptTag.parentNode) {
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
+    if (typeof window !== "undefined") {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
 
-    // Store the original function
-    const originalOnReady = window.onYouTubeIframeAPIReady;
+      // Store the original function (if it exists)
+      const originalOnReady = window.onYouTubeIframeAPIReady;
 
-    window.onYouTubeIframeAPIReady = () => {
-      new window.YT.Player('youtube-player', {
-        videoId: 'JW0YxVpnj9o',
-        playerVars: {
-          autoplay: 1,
-          loop: 1,
-          controls: 0,
-          showinfo: 0,
-          rel: 0,
-          enablejsapi: 1,
-          modestbranding: 1,
-          mute: 1, // Required for autoplay
-          playlist: 'JW0YxVpnj9o'
-        },
-        events: {
-          onReady: (event) => {
-            event.target.playVideo();
-          }
+      window.onYouTubeIframeAPIReady = () => {
+        if (window.YT) {
+            new window.YT.Player('youtube-player', {
+            videoId: 'JW0YxVpnj9o',
+            playerVars: {
+              autoplay: 1,
+              loop: 1,
+              controls: 0,
+              showinfo: 0,
+              rel: 0,
+              enablejsapi: 1,
+              modestbranding: 1,
+              mute: 1, // Required for autoplay
+              playlist: 'JW0YxVpnj9o',
+            } as PlayerVars,
+            events: {
+              onReady: (event: YouTubeEvent) => event.target.playVideo(),
+            },
+            } as PlayerOptions);
         }
-      } as PlayerOptions);
-    };
+      };
 
-    return () => {
-      // Restore original function or set to no-op function
-      window.onYouTubeIframeAPIReady = originalOnReady || (() => {});
-    };
+      return () => {
+        if (typeof window !== "undefined") {
+          // Restore original function or set it to a no-op function
+          window.onYouTubeIframeAPIReady = originalOnReady || (() => {});
+        }
+      };
+    }
   }, []);
-
   return (
     <section className="relative min-h-screen my-20 w-full">
       <div className="flex flex-col lg:flex-row">

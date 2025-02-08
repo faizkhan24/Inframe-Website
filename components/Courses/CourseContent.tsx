@@ -1,7 +1,7 @@
 // components/Courses/CourseContent.tsx
 "use client";
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { ChevronRight } from "lucide-react";
 import { Poppins } from "next/font/google";
 
@@ -12,7 +12,7 @@ import CurriculumSection from "./CurriculumSection";
 import SoftwareLogos from "./SoftwareLogos";
 import TestimonialSlider from "./TestimonialSlider";
 import FAQSection from "./FAQSection";
-import { categoryHeroImages, CurriculumType, SoftwareType, VideosType, WhatLearn } from "@/utils/courseTypes";
+import { categoryHeroImages, CurriculumType, SoftwareType, VideosType, WhatLearn } from "../../utils/courseTypes";
 import IndustryPartners from "./Partners";
 
 import AdmissionProcess from "./AdmissionProcess";

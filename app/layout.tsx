@@ -1,10 +1,10 @@
 // app/layout.tsx (or your relevant layout file)
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer";
 
-import Auth0ClientProvider from '@/components/Auth0ClientProvider';
+
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope", // Optional, for CSS variable
@@ -30,11 +30,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={manrope.variable}>
         {/* Wrap with Auth0ClientProvider to enable Auth0 context */}
-        <Auth0ClientProvider>
+  
           <Navbar />
           {children}
           <Footer />
-        </Auth0ClientProvider>
+    
       </body>
     </html>
   );

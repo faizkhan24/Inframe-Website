@@ -1,4 +1,4 @@
-import { LOGOS } from "@/utils/constant";
+import { LOGOS } from "../../utils/constant";
 import React from "react";
 import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
 
