@@ -80,7 +80,7 @@ const CampusTour = () => {
     }
   }, []);
   return (
-    <section className="relative min-h-screen my-20 w-full">
+    <section className="relative md:min-h-screen my-5 w-full">
       <div className="flex flex-col lg:flex-row">
         {/* Left Content */}
         <div className="w-full lg:w-1/2 flex items-center p-8 lg:p-16">

@@ -62,7 +62,7 @@ export default function Testimonial() {
                   <div className="grid lg:grid-cols-[1fr,auto] gap-8 lg:gap-16 items-center">
                     <div className="space-y-6 max-w-3xl">
                       <h3 className={`text-3xl sm:text-4xl lg:text-5xl font-black leading-tight ${poppins.className}`}>
-                        {`"{testimonial.quote}"`}
+                      {testimonial.quote}
                       </h3>
                       <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-sans">{testimonial.text}</p>
                       <div className={`bg-yellow-400 font-bold font-sans py-2 px-10 inline-block  text-lg ${poppins.className}`}>
