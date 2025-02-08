@@ -183,7 +183,7 @@ export const LifeAtCampus = () => {
       <CampusLife/>
 
       {/* Student Clubs Section */}
-      {/* <StudentClubs/> */}
+      <StudentClubs/> 
 
 
       <div className="bg bg2  "></div>
