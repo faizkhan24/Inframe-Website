@@ -52,7 +52,7 @@ export const LifeAtCampus = () => {
     {
       title: "Arts & Culture",
       description: "Express yourself through our vibrant arts and culture scene. Participate in theatrical productions and music concerts.",
-      image: "/fine-art/SKF09513.JPG"
+      image: "/fine art/SKF09513.JPG"
     },
     {
       title: "Sports & Recreation",
@@ -80,7 +80,7 @@ export const LifeAtCampus = () => {
           <div className="relative h-screen">
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent z-10" />
             <Image
-              src="/campus images/1721738128651.jpg"
+              src="/images/gallery/1721738128651.jpg"
               alt="Campus Life Hero Image"
               fill
               className="object-cover"
@@ -127,7 +127,7 @@ export const LifeAtCampus = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative w-full h-64">
                   <Image
-                    src="/campus-images/DSC04140.jpg"
+                    src="/images/gallery/DSC04140.jpg"
                     alt="Campus view 1"
                     fill
                     className="object-cover rounded-lg"
@@ -138,7 +138,7 @@ export const LifeAtCampus = () => {
                 </div>
                 <div className="relative w-full h-64 mt-8">
                   <Image
-                    src="/campus-images/1721366034581.jpg"
+                    src="/images/gallery/1721366034581.jpg"
                     alt="Campus view 2"
                     fill
                     className="object-cover rounded-lg"

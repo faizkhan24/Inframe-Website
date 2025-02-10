@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Button } from "../components/ui/button";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -8,49 +9,55 @@ const ModernGallery = () => {
 
   const images = [
     {
-      url: "/campus-images/DSC04216.jpg",
+      url: "/images/gallery/DSC04216.jpg", // Updated path
       alt: "Pow Wow celebration with red balloons",
-
-      size: "large"
+      size: "large",
+      width: 1920,
+      height: 1080
     },
     {
-      url: "/campus-images/DSC04169.jpg",
+      url: "/images/gallery/DSC04169.jpg", // Updated path
       alt: "Convocation ceremony",
-  
-      size: "medium"
+      size: "medium",
+      width: 1080,
+      height: 1320
     },
     {
-      url: "/campus-images/DSC04140.jpg",
+      url: "/images/gallery/DSC04140.jpg", // Updated path
       alt: "Students in knitting lab",
-
-      size: "medium"
+      size: "medium",
+      width: 1080,
+      height: 810
     },
     {
-      url: "/campus-images/1721738128651.jpg",
+      url: "/images/gallery/1721738128651.jpg",
       alt: "Ethnic Day celebration",
-
-      size: "medium"
+      size: "medium",
+      width: 1080,
+      height: 810
     },
     {
-      url: "/campus-images/SKF02795.jpg",
+      url: "/images/gallery/SKF02795.jpg", // Updated path
       alt: "Ethnic Day celebration",
-
-      size: "medium"
+      size: "medium",
+      width: 1080,
+      height: 810
     },
     {
-      url: "/campus-images/1721737896096.jpg",
+      url: "/images/gallery/1721737896096.jpg",
       alt: "Ethnic Day celebration",
-  
-      size: "medium"
+      size: "medium",
+      width: 1920,
+      height: 1080
     },
     {
-      url: "/campus-images/1717668347893 - Copy.jpg",
+      url: "/images/gallery/1717668347893.jpg", // Removed "- Copy"
       alt: "Ethnic Day celebration",
-  
-      size: "medium"
+      size: "medium",
+      width: 1080,
+      height: 1320
     }
   ];
-
 
   const navigateGallery = (direction: number) => {
     if (selectedIndex !== null) {
@@ -68,85 +75,60 @@ const ModernGallery = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
         {/* Large image - Pow Wow */}
         <div className="col-span-1 lg:col-span-2 aspect-[16/9] relative group">
-          <img
+          <Image
             src={images[0].url}
             alt={images[0].alt}
-            className="w-full h-full object-cover rounded-lg"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
+            className="object-cover rounded-lg cursor-pointer"
             onClick={() => setSelectedIndex(0)}
+            priority // Load this image immediately
           />
-     
         </div>
 
         {/* Medium image - Convocation */}
         <div className="aspect-[9/11] relative group">
-          <img
+          <Image
             src={images[1].url}
             alt={images[1].alt}
-            className="w-full h-full object-cover rounded-lg"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover rounded-lg cursor-pointer"
             onClick={() => setSelectedIndex(1)}
           />
-     
         </div>
-        
 
         {/* Medium image - Knitting Lab */}
         <div className="aspect-[4/3] relative group">
-          <img
+          <Image
             src={images[2].url}
             alt={images[2].alt}
-            className="w-full h-full object-cover rounded-lg"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover rounded-lg cursor-pointer"
             onClick={() => setSelectedIndex(2)}
           />
-        
         </div>
 
-        {/* Medium image - Ethnic Day */}
-        <div className="aspect-[4/3] relative group">
-          <img
-            src={images[3].url}
-            alt={images[3].alt}
-            className="w-full h-full object-cover rounded-lg"
-            onClick={() => setSelectedIndex(3)}
-          />
-          <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-
+        {/* Remaining images */}
+        {images.slice(3).map((image, index) => (
+          <div 
+            key={index + 3}
+            className={`${
+              image.size === 'large' ? 'col-span-1 lg:col-span-2 aspect-[16/9]' : 
+              image.size === 'medium' ? 'aspect-[4/3]' : 'aspect-[9/11]'
+            } relative group`}
+          >
+            <Image
+              src={image.url}
+              alt={image.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover rounded-lg cursor-pointer"
+              onClick={() => setSelectedIndex(index + 3)}
+            />
           </div>
-        </div>
-
-        <div className="aspect-[4/3] relative group">
-          <img
-            src={images[4].url}
-            alt={images[4].alt}
-            className="w-full h-full object-cover rounded-lg"
-            onClick={() => setSelectedIndex(4)}
-          />
-     
-        </div>
-
-        <div className="col-span-1 lg:col-span-2 aspect-[16/9] relative group">
-          <img
-            src={images[5].url}
-            alt={images[5].alt}
-            className="w-full h-full object-cover rounded-lg"
-            onClick={() => setSelectedIndex(5)}
-          />
-        
- 
-       
-        </div>
-
-        <div className="aspect-[9/11] relative group">
-          <img
-            src={images[6].url}
-            alt={images[6].alt}
-            className="w-full h-full object-cover rounded-lg"
-            onClick={() => setSelectedIndex(6)}
-          />
-       
-        </div>
-        
-        {/* Decorative element */}
-      
+        ))}
       </div>
 
       {/* Modal */}
@@ -163,13 +145,16 @@ const ModernGallery = () => {
             </Button>
 
             <div className="relative">
-              <img
-                src={images[selectedIndex].url}
-                alt={images[selectedIndex].alt}
-                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-              />
-              
-           
+              <div className="relative w-full h-[80vh]">
+                <Image
+                  src={images[selectedIndex].url}
+                  alt={images[selectedIndex].alt}
+                  fill
+                  sizes="100vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
 
               <Button
                 variant="ghost"
