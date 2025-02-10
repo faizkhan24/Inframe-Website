@@ -19,7 +19,7 @@ const poppins = Poppins({
   weight: ["400", "500", "700"],
 });
 
-const Navbar = () => {
+const LandingNavbar = () => {
 
 
  
@@ -66,4 +66,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default LandingNavbar;

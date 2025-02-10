@@ -183,7 +183,7 @@ export const LifeAtCampus = () => {
       <CampusLife/>
 
       {/* Student Clubs Section */}
-      {/* <StudentClubs/> */}
+      <StudentClubs/> 
 
 
       <div className="bg bg2  "></div>
@@ -193,7 +193,7 @@ export const LifeAtCampus = () => {
      <CampusTour/>
 
       {/* Events & Activities */}
-      <section className="w-full py-24 ">
+      <section className="w-full py-10 ">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-black">Campus Events & Activities</h2>
