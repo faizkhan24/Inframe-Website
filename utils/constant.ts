@@ -1,4 +1,5 @@
 export const INFRAME_LOGO = "/pixelcut-export-negate.png";
+export const LOGO = "https://inframecollege.org/wp-content/uploads/2021/05/inframecollege.org_.png";
 
 export const courses = [
   {
@@ -621,12 +622,102 @@ export  const cards = [
     };
   
  export const levels = [
-    "B. Des", "B.VOC", "B.SC", "1 Year Diploma", 
-    "3 Year Diploma", "BBA", "6 Month Certification Course"
+    "B. Des", "B.VOC", "B.SC", "BBA", 
+    "3 Year Diploma", "1 Year Diploma", "6 Month Certification Course"
   ];
   
  export const program = [
     "Interior Design", "Fashion Design", "Graphic Design", "UI & UX Design",
     "Animation and VFX", "Jewellery Design", "Fine Arts", "Digital Marketing",
     "Entrepreneurship Skill", "Media and Entertainment", "Advertising and Marketing"
+  ];
+
+  type ProgramLevels = {
+    [key: string]: {
+      [key: string]: string | string[];
+    };
+  };
+  
+
+  export const programLevels: ProgramLevels = {
+    "Interior Design": {
+      "B.Des": "B.Des in Interior Design",
+      "B.Voc": "B.Voc in Interior Design",
+      "B.Sc": "B.Sc in Interior Design",
+      "3 Year Diploma": "3 Year Diploma in Interior Design",
+      "1 Year Diploma": "1 Year Diploma in Interior Design"
+    },
+    "Fashion Design": {
+      "B.Des": "B.Des in Fashion Design",
+      "B.Voc": "B.Voc in Fashion Design",
+      "B.Sc": "B.Sc in Fashion Design",
+      "3 Year Diploma": "3 Year Diploma in Fashion Design",
+      "1 Year Diploma": "1 Year Diploma in Fashion Design"
+    },
+    "Graphic Design": {
+      "B.Des": "B.Des in Graphic Design",
+      "B.Voc": "B.Voc in Graphic Design",
+      "B.Sc": "B.Sc in Graphic Design",
+      "3 Year Diploma": "3 Year Diploma in Graphic Design",
+      "1 Year Diploma": "1 Year Diploma in Graphic Design"
+    },
+    "UI & UX Design": {
+      "B.Des": "B.Des in UI & UX Design",
+      "1 Year Diploma": "1 Year Diploma in UI & UX Design"
+    },
+    "Animation and VFX": {
+      "B.Des": "B.Des in Animation and VFX",
+      "B.Voc": "B.Voc in Animation and VFX",
+      "B.Sc": "B.Sc in Animation and VFX",
+      "3 Year Diploma": "3 Year Diploma in Animation and VFX",
+      "2 Year Diploma": "2 Year Diploma in Animation and VFX",
+      "1 Year Diploma": "1 Year Diploma in Animation and VFX"
+    },
+    "Jewellery Design": {
+      "B.Voc": "B.Voc in Jewellery Design",
+      "1 Year Diploma": "1 Year Diploma in Jewellery Design",
+      "6 Month Certificate": "6 Month Certificate course in Jewellery Design"
+    },
+    "Fine Arts": {
+      "BFA": [
+        "BFA in Painting",
+        "BFA in Visual Communication",
+        "BFA in Sculpture",
+        "BFA in Applied"
+      ],
+      "B.Voc": "B.Voc in Fine Arts",
+      "3 Year Diploma": "3 Year Diploma in Fine Arts",
+      "1 Year Diploma": "1 Year Diploma in Painting"
+    },
+    "Digital Marketing": {
+      "B.Voc": "B.Voc in Digital Marketing",
+      "1 Year Diploma": "1 Year Diploma in Digital Marketing",
+      "6 Month Certificate": "6 Month Certificate course in Digital Marketing"
+    },
+    "Entrepreneurship Skill": {
+      "B.Voc": "B.Voc in Entrepreneurship Skill",
+      "1 Year Diploma": "1 Year Diploma in Entrepreneurship Skill"
+    },
+    "Media and Entertainment": {
+      "B.Voc": "B.Voc in Media and Entertainment",
+      "1 Year Diploma": "1 Year Diploma in Media and Entertainment"
+    },
+    "Advertising and Marketing": {
+      "BBA": "BBA in Advertising and Marketing"
+    }
+  };
+
+  
+  export const BFAPrograms = [
+    'BFA in Painting',
+    'BFA in Visual Communication',
+    'BFA in Sculpture',
+    'BFA in Applied Art'
+  ];
+  
+  export const allLevels = [
+    'B.Des', 'B.Voc', 'BBA', 'BFA',
+    '3 Year Diploma',
+    '1 Year Diploma',
+    '6 Month Certificate'
   ];
