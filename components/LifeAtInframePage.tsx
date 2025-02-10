@@ -4,6 +4,7 @@ import { Button } from "../components/ui/button";
 import { ChevronRight, ArrowRight} from "lucide-react";
 import { Suspense, lazy } from 'react';
 import { Poppins } from 'next/font/google';
+import "../components/style.css";
 
 // Lazy load components
 const CampusLife = lazy(() => import('../components/CampusLife'));
@@ -193,6 +194,7 @@ export const LifeAtCampus = () => {
             </div>
           </div>
         </section>
+        <div className="bg bg1  "></div>
 
         {/* Lazy Loaded Components */}
         <Suspense fallback={<LoadingSpinner />}>

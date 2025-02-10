@@ -9,7 +9,7 @@ const ModernGallery = () => {
 
   const images = [
     {
-      url: "/images/gallery/DSC04216.jpg", // Updated path
+      url: "/campus-27.JPG", // Updated path
       alt: "Pow Wow celebration with red balloons",
       size: "large",
       width: 1920,
