@@ -419,7 +419,7 @@ export  const cards = [
   export const experienceCamputLife= [
     "/fashion/DSC03209.JPG",
     "/fashion/DSC04131.JPG",
-    "/campus images/1721737896096.jpg",
+    "/images/gallery/1721737896096.jpg",
     "/fine art/SKF09511.JPG",
     "/IMG-20230414-WA0011.jpg",
     "/fine art/SKF09513.JPG",
