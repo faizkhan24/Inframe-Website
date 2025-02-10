@@ -16,14 +16,14 @@ const ModernGallery = () => {
       height: 1080
     },
     {
-      url: "/images/gallery/DSC04169.jpg", // Updated path
+      url: "/fashion-2.JPG", // Updated path
       alt: "Convocation ceremony",
       size: "medium",
       width: 1080,
       height: 1320
     },
     {
-      url: "/images/gallery/DSC04140.jpg", // Updated path
+      url: "/fashion-1.JPG", // Updated path
       alt: "Students in knitting lab",
       size: "medium",
       width: 1080,
@@ -37,7 +37,7 @@ const ModernGallery = () => {
       height: 810
     },
     {
-      url: "/images/gallery/SKF02795.jpg", // Updated path
+      url: "/campus-32.JPG", // Updated path
       alt: "Ethnic Day celebration",
       size: "medium",
       width: 1080,
@@ -51,7 +51,7 @@ const ModernGallery = () => {
       height: 1080
     },
     {
-      url: "/images/gallery/1717668347893.jpg", // Removed "- Copy"
+      url: "/campus-29.jpg", // Removed "- Copy"
       alt: "Ethnic Day celebration",
       size: "medium",
       width: 1080,
