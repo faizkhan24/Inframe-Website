@@ -8,43 +8,43 @@ const ModernGallery = () => {
 
   const images = [
     {
-      url: "/campus images/DSC04216.jpg",
+      url: "/campus-images/DSC04216.jpg",
       alt: "Pow Wow celebration with red balloons",
 
       size: "large"
     },
     {
-      url: "/campus images/DSC04169.jpg",
+      url: "/campus-images/DSC04169.jpg",
       alt: "Convocation ceremony",
   
       size: "medium"
     },
     {
-      url: "/campus images/DSC04140.jpg",
+      url: "/campus-images/DSC04140.jpg",
       alt: "Students in knitting lab",
 
       size: "medium"
     },
     {
-      url: "/campus images/1721738128651.jpg",
+      url: "/campus-images/1721738128651.jpg",
       alt: "Ethnic Day celebration",
 
       size: "medium"
     },
     {
-      url: "/campus images/SKF02795.jpg",
+      url: "/campus-images/SKF02795.jpg",
       alt: "Ethnic Day celebration",
 
       size: "medium"
     },
     {
-      url: "/campus images/1721737896096.jpg",
+      url: "/campus-images/1721737896096.jpg",
       alt: "Ethnic Day celebration",
   
       size: "medium"
     },
     {
-      url: "/campus images/1717668347893 - Copy.jpg",
+      url: "/campus-images/1717668347893 - Copy.jpg",
       alt: "Ethnic Day celebration",
   
       size: "medium"
