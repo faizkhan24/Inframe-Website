@@ -11,7 +11,7 @@ import Image from "next/image";
 import StudyDropDown from "./Navbar/StudyDropDown";
 import { LOGO } from "../utils/constant";
 import { Button } from "@/components/ui/button";
-import { Poppins } from "next/font/google";
+
 import { Phone } from "lucide-react";
 
 
