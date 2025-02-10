@@ -10,11 +10,11 @@ import {
 import Image from 'next/image';
 
 const images = [
-  '/campus images/DSC04216.JPG',
-  '/campus images/1721738128651.jpg',
-  '/campus images/1721122517472.jpg',
-  '/campus images/1719304885452_1.jpg',
-  '/campus images/1719471947426.jpg'
+  '/images/gallery/DSC04216.JPG',
+  '/images/gallery/1721738128651.jpg',
+  '/images/gallery/1721122517472.jpg',
+  '/images/gallery/1719304885452_1.jpg',
+  '/images/gallery/1719471947426.jpg'
 ];
 
 function ImageCarousel() {

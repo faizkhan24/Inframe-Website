@@ -127,7 +127,7 @@ export const LifeAtCampus = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative w-full h-64">
                   <Image
-                    src="/images/gallery/DSC04140.jpg"
+                    src="/fashion-1.JPG"
                     alt="Campus view 1"
                     fill
                     className="object-cover rounded-lg"
