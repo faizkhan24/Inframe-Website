@@ -26,9 +26,9 @@ const Navbar = () => {
 
 
 
-  interface ApplyClickEvent extends React.MouseEvent<HTMLButtonElement> {}
+  
 
-  const handleApplyClick = (e: ApplyClickEvent): void => {
+  const handleApplyClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     setIsFormOpen(true);
   };

@@ -52,7 +52,7 @@ interface ApplyNowFormProps {
 const ApplyNowForm = ({ isFormOpen, setIsFormOpen, isScrolled }: ApplyNowFormProps) => {
   const [selectedState, setSelectedState] = useState<string>("");
   const [selectedLevel, setSelectedLevel] = useState<string>("");
-  const [selectedProgram, setSelectedProgram] = useState<string>("");
+  // const [selectedProgram, setSelectedProgram] = useState<string>("");
   const [submissionMessage, setSubmissionMessage] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -203,7 +203,7 @@ const ApplyNowForm = ({ isFormOpen, setIsFormOpen, isScrolled }: ApplyNowFormPro
                 onValueChange={(value) => {
                   field.onChange(value);
                   setSelectedLevel(value);
-                  setSelectedProgram("");
+            
                   form.setValue("program", "");
                 }}
                 value={field.value}
@@ -233,7 +233,7 @@ const ApplyNowForm = ({ isFormOpen, setIsFormOpen, isScrolled }: ApplyNowFormPro
                 <Select
                   onValueChange={(value) => {
                     field.onChange(value);
-                    setSelectedProgram(value);
+                 
                   }}
                   value={field.value}
                 >
@@ -265,7 +265,7 @@ const ApplyNowForm = ({ isFormOpen, setIsFormOpen, isScrolled }: ApplyNowFormPro
                   <Select
                     onValueChange={(value) => {
                       field.onChange(value);
-                      setSelectedProgram(value);
+                
                       
                     }}
                     value={field.value}

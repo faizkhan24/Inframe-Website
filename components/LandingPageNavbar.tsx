@@ -14,10 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Poppins } from "next/font/google";
 import { Phone } from "lucide-react";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
+
 
 const LandingNavbar = () => {
 
