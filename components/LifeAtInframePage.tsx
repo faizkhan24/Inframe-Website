@@ -63,7 +63,7 @@ export const LifeAtCampus = () => {
     {
       title: "Student Organizations",
       description: "Find your community in our diverse student organizations. From academic clubs to special interest groups.",
-      image: "/campus-images/1717492692489 - Copy (2).jpg"
+      image: "/images/gallery/1717492692489 - Copy (2).jpg"
     }
   ];
 
