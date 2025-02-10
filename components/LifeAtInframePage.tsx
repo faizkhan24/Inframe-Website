@@ -122,6 +122,7 @@ export const LifeAtCampus = () => {
                   src="/campus images/DSC04140.jpg"
                   alt="Campus view 1"
                   fill
+                  priority
                   className="object-cover rounded-lg"
                 />
               </div>
@@ -130,6 +131,7 @@ export const LifeAtCampus = () => {
                   src="/campus images/1721366034581.jpg"
                   alt="Campus view 2"
                   fill
+                  priority
                   className="object-cover rounded-lg"
                 />
               </div>
