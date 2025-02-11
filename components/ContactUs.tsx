@@ -12,6 +12,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 
 // Using the Poppins font
 const poppins = Poppins({
@@ -37,7 +38,11 @@ export function ContactUsForm({
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const { control, handleSubmit, formState: { errors } } = useForm<ContactFormData>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
 
@@ -65,15 +70,17 @@ export function ContactUsForm({
       console.error("Form submission error:", err);
       setIsError(true);
       setIsSuccess(false);
-    }
-     finally {
+    } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
     <div
-      className={cn("flex flex-col gap-6 mt-20 font-sans bg-yellow-50", className)}
+      className={cn(
+        "flex flex-col gap-6 mt-20 font-sans bg-yellow-50",
+        className
+      )}
       {...props}
     >
       <div className="mt-4">
@@ -182,10 +189,12 @@ export function ContactUsForm({
               Scan the QR code below to get directions on Google Maps:
             </p>
             <div className="mt-6">
-              <img
-                src="\qrcode_164435803_146bf5935e9cfa0ac7b362dd16065180.png"
+              <Image
+                src="/qrcode_164435803_146bf5935e9cfa0ac7b362dd16065180.png"
                 alt="QR Code"
-                className="rounded-md shadow-lg w-52 h-52"
+                width={208} // Equivalent to w-52 (52 * 4)
+                height={208} // Equivalent to h-52 (52 * 4)
+                className="rounded-md shadow-lg"
               />
             </div>
           </div>
@@ -200,10 +209,7 @@ export function ContactUsForm({
             <p className="text-gray-600 mt-2 text-center text-lg">
               Fill out the form below to get in touch with us.
             </p>
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="mt-6 space-y-6"
-            >
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-6">
               <div className="grid gap-3">
                 <div className="flex flex-col">
                   <Label htmlFor="first_name ">First Name</Label>
@@ -220,7 +226,9 @@ export function ContactUsForm({
                     )}
                   />
                   {errors.first_name && (
-                    <p className="text-red-500 text-sm">{errors.first_name.message}</p>
+                    <p className="text-red-500 text-sm">
+                      {errors.first_name.message}
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-col">
@@ -238,7 +246,9 @@ export function ContactUsForm({
                     )}
                   />
                   {errors.last_name && (
-                    <p className="text-red-500 text-sm">{errors.last_name.message}</p>
+                    <p className="text-red-500 text-sm">
+                      {errors.last_name.message}
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-col">
@@ -247,15 +257,13 @@ export function ContactUsForm({
                     name="email"
                     control={control}
                     render={({ field }) => (
-                      <Input
-                        {...field}
-                        id="email"
-                        placeholder="Your Email"
-                      />
+                      <Input {...field} id="email" placeholder="Your Email" />
                     )}
                   />
                   {errors.email && (
-                    <p className="text-red-500 text-sm">{errors.email.message}</p>
+                    <p className="text-red-500 text-sm">
+                      {errors.email.message}
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-col">
@@ -272,7 +280,9 @@ export function ContactUsForm({
                     )}
                   />
                   {errors.message && (
-                    <p className="text-red-500 text-sm">{errors.message.message}</p>
+                    <p className="text-red-500 text-sm">
+                      {errors.message.message}
+                    </p>
                   )}
                 </div>
               </div>
@@ -284,10 +294,14 @@ export function ContactUsForm({
                 {isSubmitting ? "Submitting..." : "Send Message"}
               </Button>
               {isSuccess && (
-                <p className="text-green-500 mt-2 text-center">Message sent successfully!</p>
+                <p className="text-green-500 mt-2 text-center">
+                  Message sent successfully!
+                </p>
               )}
               {isError && (
-                <p className="text-red-500 mt-2 text-center">Something went wrong, please try again.</p>
+                <p className="text-red-500 mt-2 text-center">
+                  Something went wrong, please try again.
+                </p>
               )}
             </form>
           </div>

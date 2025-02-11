@@ -1,6 +1,7 @@
 import { LOGOS } from "../utils/constant";
 import React from "react";
 import { Poppins } from "next/font/google"; // Importing Google Fonts via next/font
+import Image from "next/image";
 
 // Using the Poppins font
 const poppins = Poppins({
@@ -13,15 +14,19 @@ const InfiniteSlider: React.FC = () => {
     <div className="w-full relative xl:left-[20rem] lg:text-left text-center mx-auto">
       {/* Heading */}
       <h2
-  className={`text-center xl:text-left font-sans text-3xl font-bold text-gray-800 mb-4 ${poppins.className}`}
->
-  INDUSTRY & PLACEMENT PARTNER
-</h2>
+        className={`text-center xl:text-left font-sans text-3xl font-bold text-gray-800 mb-4 ${poppins.className}`}
+      >
+        INDUSTRY & PLACEMENT PARTNER
+      </h2>
 
-{/* Short Description Paragraph */}
-<p className={`text-center xl:text-left text-lg text-gray-600 mb-8 ${poppins.className}`}>
-  Inframe’s strong industry partnerships provide students with unparalleled career opportunities and real-world experience to excel in design and business.
-</p>
+      {/* Short Description Paragraph */}
+      <p
+        className={`text-center xl:text-left text-lg text-gray-600 mb-8 ${poppins.className}`}
+      >
+        Inframe’s strong industry partnerships provide students with
+        unparalleled career opportunities and real-world experience to excel in
+        design and business.
+      </p>
 
       {/* Slider container */}
       <div className="relative bg-white overflow-hidden py-12">
@@ -38,12 +43,12 @@ const InfiniteSlider: React.FC = () => {
               className="flex flex-col items-center justify-center text-slate-800"
             >
               <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 shadow-md border border-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                   src={logo.src}
-                  alt={logo.name}
-                  width={120}
-                  height={120}
-                  className="object-contain"
+                  alt="not loaded"
+                  width={192} // Set width dynamically based on container size (adjust as needed)
+                  height={192}
+                  className="object-contain w-full h-full"
                 />
               </div>
               <p className="mt-2 text-sm font-medium text-gray-600">

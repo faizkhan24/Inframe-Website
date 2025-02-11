@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const MembershipPartnership = () => {
     return (
       <section className="bg-gray-50 py-16">
@@ -8,27 +10,36 @@ const MembershipPartnership = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-center justify-center">
             {/* NSDC Logo */}
             <div className="flex justify-center items-center">
-              <img
-                src="/ugc.gif"
-                alt="NSDC Logo"
-                className="h-28 w-auto transition-transform transform hover:scale-110 shadow-lg rounded-lg bg-white p-4"
-              />
+            <Image
+              src="/ugc.gif"
+              alt="NSDC Logo"
+              width={150}  // Adjust as needed
+              height={112} // Adjust as needed
+              objectFit="contain"
+              className="transition-transform transform hover:scale-110 shadow-lg rounded-lg bg-white p-4"
+            />
             </div>
             {/* Glocal University Logo */}
             <div className="flex justify-center items-center">
-              <img
-                src="/The_Glocal_University-_Logo.png"
-                alt="Glocal University Logo"
-                className="h-28 w-auto transition-transform transform hover:scale-110 shadow-lg rounded-lg bg-white p-4"
-              />
+            <Image
+              src="/The_Glocal_University-_Logo.png"
+              alt="Glocal University Logo"
+              width={150}
+              height={112}
+              objectFit="contain"
+              className="transition-transform transform hover:scale-110 shadow-lg rounded-lg bg-white p-4"
+            />
             </div>
             {/* Skill India Logo */}
             <div className="flex justify-center items-center">
-              <img
-                src="/skill india.jpeg"
-                alt="Skill India Logo"
-                className="h-28 w-auto transition-transform transform hover:scale-110 shadow-lg rounded-lg bg-white p-4"
-              />
+            <Image
+              src="/skill india.jpeg"
+              alt="Skill India Logo"
+              width={150}
+              height={112}
+              objectFit="contain"
+              className="transition-transform transform hover:scale-110 shadow-lg rounded-lg bg-white p-4"
+            />
             </div>
           </div>
         </div>

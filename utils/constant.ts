@@ -402,18 +402,18 @@ export  const cards = [
   ];
 
   export const studentImages = [
-    "/campus images/SKF02795.JPG",
-    "/campus images/SKF02730.JPG",
-    "/campus images/DSC04140.JPG",
-    "/campus images/1722323502473.jpg",
-    "/campus images/1721738128651.jpg",
-    "/campus images/DSC04169.JPG",
-    "/campus images/SKF02800.JPG",
-    "/campus images/SKF02732.JPG",
-    "/campus images/1721738005538.jpg",
-    "/campus images/1719576914809_1.jpg",
-    "/campus images/1717492692489 - Copy (2).jpg",
-    "/campus images/DSC04267.JPG",
+    "/campus-27.JPG",
+    "/images/gallery/SKF02730.JPG",
+    "/fashion-1.JPG",
+    "/images/gallery/1722323502473.jpg",
+    "/images/gallery/1721738128651.jpg",
+    "/fashion-2.JPG",
+    "/images/gallery/SKF02800.JPG",
+    "/images/gallery/SKF02732.JPG",
+    "/images/gallery/1721738005538.jpg",
+    "/images/gallery/1719576914809_1.jpg",
+    "/images/gallery/1717492692489 - Copy (2).jpg",
+    "/images/gallery/DSC04267.JPG",
   ];
 
   export const experienceCamputLife= [

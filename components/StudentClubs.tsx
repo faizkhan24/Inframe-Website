@@ -1,5 +1,6 @@
 'use client'
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 
 const StudentClubs = () => {
@@ -80,10 +81,13 @@ const StudentClubs = () => {
                 
                 {/* Image */}
                 <div className="md:w-2/5">
-                  <img
+                <Image
                     src={club.src}
                     alt={club.name}
-                    className="w-full h-full object-cover"
+                    className="object-cover"
+                    layout="fill"
+                    objectFit="cover"
+                    priority={index < 2} // Load first two images eagerly
                   />
                 </div>
               </div>

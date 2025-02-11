@@ -32,6 +32,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'inframecollege.org'
+      },
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com'
       }
     ],
     minimumCacheTTL: 60,

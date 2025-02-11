@@ -70,12 +70,7 @@ interface Contact {
   hoverColor: string;
 }
 
-interface Course {
-  title: string;
-  duration: string;
-  type: string;
-  image: string;
-}
+
 
 interface Facility {
   title: string;

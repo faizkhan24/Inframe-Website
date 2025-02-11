@@ -18,6 +18,7 @@ import {
 import { useState } from "react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image"; // Import Next.js Image component
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -94,7 +95,7 @@ const ReelCard = () => {
               Your browser does not support the video tag.
             </video>
 
-            <div className="flex justify-between items-center mb-4 p-4 relative z-10 ">
+            <div className="flex justify-between items-center mb-4 p-4 relative z-10">
               <div className="flex items-center">
                 <button className="text-white mr-2">
                   <ArrowLeft />
@@ -109,8 +110,11 @@ const ReelCard = () => {
             <div className="flex justify-between pb-[5.5rem] items-end h-full relative z-10 px-4">
               <div className="flex flex-col mb-4 text-white">
                 <div className="flex items-center mb-2">
-                  <img
-                    src="\96252855_545538459478510_4060708075890278400_n.jpg"
+                  <Image
+                    src="/96252855_545538459478510_4060708075890278400_n.jpg"
+                    alt="Profile Picture"
+                    width={48}
+                    height={48}
                     className="w-12 h-12 rounded-full mr-3 border-2 border-gray-800"
                   />
                   <Link
@@ -152,8 +156,11 @@ const ReelCard = () => {
                 <button className="text-white hover:text-gray-400 transition-transform duration-300 transform hover:scale-125">
                   <MoreHorizontal />
                 </button>
-                <img
+                <Image
                   src="https://i.scdn.co/image/ab67616d0000b2736227bea855e8e32fe0c4e81f"
+                  alt="Music Cover"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 object-cover rounded-full border-2 border-gray-800"
                 />
               </div>

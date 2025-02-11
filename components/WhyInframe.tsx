@@ -1,6 +1,14 @@
 import React from "react";
 import { Poppins } from "next/font/google"; // Import Google Fonts via next/font
-import { FaHandshake, FaUserGraduate, FaStar, FaLaptop, FaRegMoneyBillAlt, FaClock } from "react-icons/fa";
+import {
+  FaHandshake,
+  FaUserGraduate,
+  FaStar,
+  FaLaptop,
+  FaRegMoneyBillAlt,
+  FaClock,
+} from "react-icons/fa";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -47,15 +55,25 @@ const WhyInframe = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left Section */}
           <div className="flex flex-col justify-center items-start">
-            <h6 className={`text-xl text-gray-600 mb-2 ${poppins.className}`}>Transparent Process</h6>
-            <h2 className={`text-4xl font-bold mb-4 ${poppins.className}`}>Why People Choose Us</h2>
+            <h6 className={`text-xl text-gray-600 mb-2 ${poppins.className}`}>
+              Transparent Process
+            </h6>
+            <h2 className={`text-4xl font-bold mb-4 ${poppins.className}`}>
+              Why People Choose Us
+            </h2>
             <p className="text-lg text-gray-700 mb-6 font-sans">
-              At Inframe, we are committed to providing a transformative learning experience that blends industry expertise with hands-on opportunities. Our comprehensive approach ensures that students not only receive the best education but also gain the real-world experience needed to thrive in a competitive market.
+              At Inframe, we are committed to providing a transformative
+              learning experience that blends industry expertise with hands-on
+              opportunities. Our comprehensive approach ensures that students
+              not only receive the best education but also gain the real-world
+              experience needed to thrive in a competitive market.
             </p>
             <div className="relative">
-              <img
-                src="images/gallery/1721366034581.jpg"
+              <Image
+                src="/images/gallery/1721366034581.jpg"
                 alt="Why Choose Us"
+                width={500} // Adjust width accordingly
+                height={300} // Adjust height accordingly
                 className="rounded-lg p-8 shadow-lg"
               />
               <a

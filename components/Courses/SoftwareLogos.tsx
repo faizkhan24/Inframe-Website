@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,10 +31,13 @@ const SoftwareLogos = ({ software }: SoftwareLogosProps) => {
         {software.map((software) => (
           <div key={software.name} className="flex flex-col items-center">
             <div className=" flex items-center justify-center mb-4">
-              <img
+            <Image
                 src={software.src}
                 alt={software.name}
-                className="w-40 h-40 object-contain"
+                width={160} // Adjust based on your design
+                height={160}
+                objectFit="contain"
+                priority
               />
             </div>
             <p className="text-center text-black">{software.name}</p>

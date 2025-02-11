@@ -8,22 +8,23 @@ import {
 } from "../../components/ui/carousel";
 import { Card, CardContent } from "../../components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 const carouselImages = [
   {
-    src: "/campus images/1721366034581.jpg",
+    src: "/images/gallery/1721366034581.jpg",
     alt: "University campus view"
   },
   {
-    src: "/campus images/1719471947426.jpg",
+    src: "/images/gallery/1719471947426.jpg",
     alt: "Students in classroom"
   },
   {
-    src: "/campus images/1721642783350.jpg",
+    src: "/images/gallery/1721642783350.jpg",
     alt: "Library interior"
   },
   {
-    src: "/campus images/1721123080085.jpg",
+    src: "/images/gallery/1721123080085.jpg",
     alt: "Campus life"
   }
 ];
@@ -54,10 +55,12 @@ const AdmissionProcess = () => {
                   <Card className="border-2 border-black">
                     <CardContent className="p-0">
                       <div className="relative h-64 w-full">
-                        <img
+                      <Image
                           src={image.src}
                           alt={image.alt}
-                          className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                          fill
+                          className="object-cover rounded-lg"
+                          priority={index === 0} // Load the first image faster
                         />
                       </div>
                     </CardContent>

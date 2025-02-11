@@ -12,13 +12,19 @@ import CurriculumSection from "./CurriculumSection";
 import SoftwareLogos from "./SoftwareLogos";
 import TestimonialSlider from "./TestimonialSlider";
 import FAQSection from "./FAQSection";
-import { categoryHeroImages, CurriculumType, SoftwareType, VideosType, WhatLearn } from "../../utils/courseTypes";
+import {
+  categoryHeroImages,
+  CurriculumType,
+  SoftwareType,
+  VideosType,
+  WhatLearn,
+} from "../../utils/courseTypes";
 import IndustryPartners from "./Partners";
 
 import AdmissionProcess from "./AdmissionProcess";
 import WhatYouWillLearn from "./WhatYouWillLearn";
 import DreamsSection from "../DreamSection";
-
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -52,21 +58,24 @@ const CourseContent = ({
 }: CourseContentProps) => {
   // Get the hero images for the current category
   const heroImagesForCategory = categoryHeroImages[category] || [];
-  
+
   // Get the appropriate hero image, fallback to first image if index is out of bounds
   const heroImage = heroImagesForCategory[index] || heroImagesForCategory[0];
 
   // Hero image fallback for categories without images
-  const fallbackHeroImage = "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1600&q=80";
+  const fallbackHeroImage =
+    "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1600&q=80";
 
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
       <div className="relative h-[95vh] overflow-hidden">
-        <img
+        <Image
           src={heroImage || fallbackHeroImage}
           alt={`${title} Hero Image`}
-          className="w-full h-full object-cover opacity-90"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -80,7 +89,9 @@ const CourseContent = ({
             <p className="text-lg md:text-2xl max-w-3xl mx-auto text-gray-300 px-4">
               {description}
             </p>
-            <Button className={`mt-8 bg-yellow-400 text-black font-semibold hover:bg-yellow-500 px-8 py-6 text-lg ${poppins.className}`}>
+            <Button
+              className={`mt-8 bg-yellow-400 text-black font-semibold hover:bg-yellow-500 px-8 py-6 text-lg ${poppins.className}`}
+            >
               Start Your Journey <ChevronRight className="ml-2" />
             </Button>
           </div>
@@ -89,13 +100,17 @@ const CourseContent = ({
 
       {/* Course Description */}
       <div className="max-w-7xl mx-auto">
-        <h2 className={`text-3xl font-bold py-8 mt-20 mx-6 md:mx-0 ${poppins.className}`}>
+        <h2
+          className={`text-3xl font-bold py-8 mt-20 mx-6 md:mx-0 ${poppins.className}`}
+        >
           {title}
         </h2>
         <div className="flex flex-col mx-6 md:mx-0 md:flex md:flex-row gap-20 md:gap-52">
           <p className="text-lg font-sans leading-9 text-justify">{content}</p>
           <div className="sm:w-[413px] p-14 sm:h-[300px] rounded-lg border bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600">
-            <h3 className={`text-2xl ${poppins.className} text-center py-5 font-bold text-black`}>
+            <h3
+              className={`text-2xl ${poppins.className} text-center py-5 font-bold text-black`}
+            >
               Step into the World of {title.split(" in ")[1] || "Design"}
             </h3>
             <div className="flex items-center gap-6">
@@ -113,30 +128,33 @@ const CourseContent = ({
       {/* Other Sections */}
       <div className="max-w-7xl mx-auto">
         <AdmissionProcess />
-        <DreamsSection/>
+        <DreamsSection />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-16">
         <HighlightsSection />
         <CareerProspects />
         {curriculum && <CurriculumSection curriculum={curriculum} />}
-        {
-          software?.length === 0 && whatYouWillLearn ? <WhatYouWillLearn whatYouWillLearn={whatYouWillLearn} /> : <SoftwareLogos software={software || []} />
-        }
-        
+        {software?.length === 0 && whatYouWillLearn ? (
+          <WhatYouWillLearn whatYouWillLearn={whatYouWillLearn} />
+        ) : (
+          <SoftwareLogos software={software || []} />
+        )}
+
         <IndustryPartners />
-        {
-          videos.length !== 0 ? <TestimonialSlider videos={videos} /> : null
-        }
-        
+        {videos.length !== 0 ? <TestimonialSlider videos={videos} /> : null}
+
         <FAQSection />
 
         {/* Call to Action */}
         <div className="text-center py-16 bg-yellow-50 text-black rounded-2xl">
-          <h2 className="text-3xl font-bold mb-6">Ready to Start Your Journey?</h2>
+          <h2 className="text-3xl font-bold mb-6">
+            Ready to Start Your Journey?
+          </h2>
           <p className="text-black mb-8 max-w-2xl mx-auto">
             Join our community of creative professionals and start your journey
-            towards becoming a professional {title.split(" in ")[1] || "designer"}.
+            towards becoming a professional{" "}
+            {title.split(" in ")[1] || "designer"}.
           </p>
           <div className="flex gap-4 justify-center">
             <Button

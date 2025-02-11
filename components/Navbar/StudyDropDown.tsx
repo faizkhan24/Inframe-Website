@@ -15,6 +15,7 @@ import Link from "next/link";
 import { categories } from "../../utils/constant";
 import { Poppins } from "next/font/google";
 import { FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -93,9 +94,11 @@ const StudyDropDown = () => {
                           >
                             <NavigationMenuLink asChild>
                               <div className="flex flex-col sm:flex-row gap-4">
-                                <img
+                                <Image
                                   src={item.image}
                                   alt={item.title}
+                                  width={96} // Adjust width as needed (24 * 4 = 96px)
+                                  height={96} // Adjust height as needed
                                   className="w-full sm:w-24 sm:h-24 object-cover rounded-lg"
                                 />
                                 <div className="flex-1">
@@ -127,7 +130,6 @@ const StudyDropDown = () => {
                                       .toLowerCase()}`}
                                     className="block"
                                   >
-                                 
                                     <Button
                                       className={`my-3 bg-yellow-400 hover:bg-yellow-500 text-black  flex items-center space-x-2 px-5 py-3 rounded-md ${poppins.className}`}
                                     >
