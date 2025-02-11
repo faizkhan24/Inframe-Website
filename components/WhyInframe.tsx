@@ -54,7 +54,7 @@ const WhyInframe = () => {
             </p>
             <div className="relative">
               <img
-                src="\campus images\1721366034581.jpg"
+                src="images/gallery/1721366034581.jpg"
                 alt="Why Choose Us"
                 className="rounded-lg p-8 shadow-lg"
               />

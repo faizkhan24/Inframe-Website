@@ -42,7 +42,7 @@ declare global {
 
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
-import { Users, BookOpen, MapPin, Mail, Phone } from "lucide-react";
+import {  MapPin, Mail, Phone } from "lucide-react";
 import IndustryPartners from "./Courses/Partners";
 import Testimonial from "./Testimonials";
 import { Poppins } from "next/font/google";
@@ -51,6 +51,10 @@ import CampusLife from "./CampusLife";
 import ApplyNow from "./ApplyNow";
 import ApplyNowForm from "./ApplyNowForm";
 import Image from "next/image";
+
+import CourseCarousel from "./CourseCarousel";
+import CourseList from "./CourseCarousel";
+import CourseCatalog from "./CourseCarousel";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -117,7 +121,7 @@ export default function ApplyPage() {
       tag.src = "https://www.youtube.com/iframe_api";
       const firstScriptTag = document.getElementsByTagName("script")[0];
       firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
-  
+
       window.onYouTubeIframeAPIReady = () => {
         if (window.YT) {
           new window.YT.Player("youtube-player", {
@@ -138,16 +142,14 @@ export default function ApplyPage() {
         }
       };
     }
-  
+
     return () => {
       if (typeof window !== "undefined") {
         window.onYouTubeIframeAPIReady = () => {};
       }
     };
   }, []);
-  
-  
-  
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleScroll = () => {
@@ -159,12 +161,11 @@ export default function ApplyPage() {
           if (!isFormOpen) setIsFormOpen(true);
         }
       };
-  
+
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [isScrolled, isFormOpen]);
-  
 
   const courses: Course[] = [
     {
@@ -215,11 +216,24 @@ export default function ApplyPage() {
       />
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen  overflow-hidden">
-        {/* YouTube Background */}
+      <section id="home" className="relative h-screen overflow-hidden">
+        {/* Background Container */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-black/50 z-10 " />
-          <div className="absolute inset-0 scale-150">
+          <div className="absolute inset-0 bg-black/50 z-10" />
+
+          {/* Mobile Background Image - visible only below sm breakpoint */}
+          <div className="absolute inset-0 block sm:hidden">
+            <Image
+              src="/images/gallery/1717492615506 - Copy (2).jpg"
+              alt="Design College Background"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Desktop Video Background - hidden below sm breakpoint */}
+          <div className="absolute inset-0 scale-150 hidden sm:block">
             <div
               id="youtube-player"
               className="w-full h-full pointer-events-none"
@@ -283,83 +297,44 @@ export default function ApplyPage() {
         <WhyInframe />
       </section>
 
-      {/* Courses Offered */}
-      <section className="py-20 bg-white">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-4">Our Programs</h2>
-    <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-      Choose from our wide range of specialized design programs
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {courses.map((course, index) => (
-        <Card
-          key={index}
-          className="overflow-hidden hover:shadow-lg transition-shadow"
-        >
-          <div className="h-48 relative">
-            <Image
-              src={course.image}
-              alt={course.title}
-              width={400}
-              height={300}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">{course.title}</h3>
-            <div className="flex items-center gap-4 text-sm text-gray-600">
-              <div className="flex items-center gap-1">
-                <BookOpen className="w-4 h-4" />
-                {course.duration}
-              </div>
-              <div className="flex items-center gap-1">
-                <Users className="w-4 h-4" />
-                {course.type}
-              </div>
-            </div>
-            <Button className="w-full mt-4">Learn More</Button>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </div>
-</section>
-
+      <section className="py-20 ">
+        <CourseCatalog/>
+      </section>
 
       {/* Campus Infrastructure */}
       <section className="py-20 bg-gray-50">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-4">
-      World-Class Infrastructure
-    </h2>
-    <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-      Experience learning in state-of-the-art facilities
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {facilities.map((facility, index) => (
-        <Card
-          key={index}
-          className="overflow-hidden hover:shadow-lg transition-shadow"
-        >
-          <div className="h-48 relative">
-            <Image
-              src={facility.image}
-              alt={facility.title}
-              width={400}
-              height={300}
-              className="w-full h-full object-cover"
-            />
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">
+            World-Class Infrastructure
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Experience learning in state-of-the-art facilities
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {facilities.map((facility, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <div className="h-48 relative">
+                  <Image
+                    src={facility.image}
+                    alt={facility.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="text-xl font-semibold text-center">
+                    {facility.title}
+                  </h3>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-          <CardContent className="p-4">
-            <h3 className="text-xl font-semibold text-center">
-              {facility.title}
-            </h3>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Life at Institute */}
       <CampusLife />

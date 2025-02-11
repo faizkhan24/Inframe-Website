@@ -1,38 +1,38 @@
 export const INFRAME_LOGO = "/pixelcut-export-negate.png";
 export const LOGO = "https://inframecollege.org/wp-content/uploads/2021/05/inframecollege.org_.png";
 
-export const courses = [
-  {
-    name: "Interior Design",
-    image: "/playful-sports-doodles-pastel-yellow-background_1355275-6708.jpg",
-    description: "Learn how to create stunning interiors that inspire creativity and comfort.",
-    category: "Design", // Add category here
-  },
-  {
-    name: "Digital Marketing",
-    image: "/fetchpik.com-HAfwcPu9n1.jpg",
-    description: "Master online strategies to market products and grow businesses.",
-    category: "Business", // Add category here
-  },
-  {
-    name: "Graphic Design",
-    image: "/still-life-graphic-design-studio (1).jpg",
-    description: "Unleash your creativity and design impactful visuals with ease.",
-    category: "Design", // Add category here
-  },
-  {
-    name: "UI UX Design",
-    image: "/133781006_10200029.jpg",
-    description: "Build modern and responsive websites using the latest technologies.",
-    category: "Design", // Add category here
-  },
-  {
-    name: "Photography",
-    image: "/7119364_3286559.jpg",
-    description: "Capture breathtaking moments and turn your passion into a career.",
-    category: "Art", // Add category here
-  },
-];
+// export const courses = [
+//   {
+//     name: "Interior Design",
+//     image: "/playful-sports-doodles-pastel-yellow-background_1355275-6708.jpg",
+//     description: "Learn how to create stunning interiors that inspire creativity and comfort.",
+//     category: "Design", // Add category here
+//   },
+//   {
+//     name: "Digital Marketing",
+//     image: "/fetchpik.com-HAfwcPu9n1.jpg",
+//     description: "Master online strategies to market products and grow businesses.",
+//     category: "Business", // Add category here
+//   },
+//   {
+//     name: "Graphic Design",
+//     image: "/still-life-graphic-design-studio (1).jpg",
+//     description: "Unleash your creativity and design impactful visuals with ease.",
+//     category: "Design", // Add category here
+//   },
+//   {
+//     name: "UI UX Design",
+//     image: "/133781006_10200029.jpg",
+//     description: "Build modern and responsive websites using the latest technologies.",
+//     category: "Design", // Add category here
+//   },
+//   {
+//     name: "Photography",
+//     image: "/7119364_3286559.jpg",
+//     description: "Capture breathtaking moments and turn your passion into a career.",
+//     category: "Art", // Add category here
+//   },
+// ];
 
 
   export const programs = [
@@ -720,4 +720,106 @@ export  const cards = [
     '3 Year Diploma',
     '1 Year Diploma',
     '6 Month Certificate'
+  ];
+
+
+  export const courses = [
+    {
+      category: "Interior Design",
+      programs: [
+        { name: "B.Des in Interior Design", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221" },
+        { name: "B.Voc in Interior Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6" },
+        { name: "B.Sc in Interior Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e" },
+        { name: "1 Year Diploma in Interior Design", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace" },
+        { name: "3 Year Diploma in Interior Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2158&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
+      ]
+    },
+    {
+      category: "Fashion Design",
+      programs: [
+        { name: "B.Des in Fashion Design", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1537832816519-689ad163238b" },
+        { name: "B.Voc in Fashion Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e" },
+        { name: "B.Sc in Fashion Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1" },
+        { name: "1 Year Diploma in Fashion Design", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d" },
+        { name: "3 Year Diploma in Fashion Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1506634064465-7dab4de896ed" }
+      ]
+    },
+    {
+      category: "Graphic Design",
+      programs: [
+        { name: "B.Des in Graphic Design", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1626785774573-4b799315345d" },
+        { name: "B.Voc in Graphic Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9" },
+        { name: "B.Sc in Graphic Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1611532736576-1864c5e3e146" },
+        { name: "1 Year Diploma in Graphic Design", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea" },
+        { name: "3 Year Diploma in Graphic Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1626785774573-4b799315345d" }
+      ]
+    },
+    {
+      category: "UI & UX Design",
+      programs: [
+        { name: "B.Des in UI & UX Design", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12" },
+        { name: "1 Year Diploma in UI & UX Design", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1613909207039-6b173b755cc1" }
+      ]
+    },
+    {
+      category: "Animation and VFX",
+      programs: [
+        { name: "B.Des in Animation and VFX", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868" },
+        { name: "B.Voc in Animation and VFX", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace" },
+        { name: "B.Sc in Animation and VFX", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1618004652321-13a63e576b80" },
+        { name: "1 Year Diploma in Animation and VFX", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1617396900799-f4ec2b43c7ae" },
+        { name: "2 Year Diploma in Animation and VFX", duration: "2 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1616499615673-ff94738d19e3" },
+        { name: "3 Year Diploma in Animation and VFX", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace" }
+      ]
+    },
+    {
+      category: "Jewellery Design",
+      programs: [
+        { name: "B.Voc in Jewellery Design", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338" },
+        { name: "1 Year Diploma in Jewellery Design", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0" },
+        { name: "1 Year Diploma in CAD Jewellery", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a" },
+        { name: "6 Month Certificate in Jewellery Design", duration: "6 Months", type: "Full Time", image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0" },
+        { name: "6 Month Certificate in CAD Jewellery", duration: "6 Months", type: "Full Time", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f" }
+      ]
+    },
+    {
+      category: "Fine Arts",
+      programs: [
+        { name: "BFA in Painting", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5" },
+        { name: "BFA in Visual Communication", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1452802968969-88e649a1a069" },
+        { name: "BFA in Sculpture", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1561839561-b13bcfe95249" },
+        { name: "BFA in Applied Arts", duration: "4 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1518998053901-5348d3961a04" },
+        { name: "B.Voc in Fine Arts", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968" },
+        { name: "1 Year Diploma in Painting", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1580136579312-94651dfd596d" },
+        { name: "3 Year Diploma in Fine Arts", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f" }
+      ]
+    },
+    {
+      category: "Digital Marketing",
+      programs: [
+        { name: "B.Voc in Digital Marketing", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312" },
+        { name: "1 Year Diploma in Digital Marketing", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1557838923-2985c318be48" },
+        { name: "6 Month Certificate in Digital Marketing", duration: "6 Months", type: "Full Time", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f" }
+      ]
+    },
+    {
+      category: "Entrepreneurship Skills",
+      programs: [
+        { name: "B.Voc in Entrepreneurship Skills", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c" },
+        { name: "1 Year Diploma in Entrepreneurship Skills", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644" }
+      ]
+    },
+    {
+      category: "Media and Entertainment",
+      programs: [
+        { name: "B.Voc in Media and Entertainment", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7" },
+        { name: "1 Year Diploma in Media and Entertainment", duration: "1 Year", type: "Full Time", image: "https://images.unsplash.com/photo-1485846234645-a62644f84728" }
+      ]
+    },
+    {
+      category: "Advertising and Marketing",
+      programs: [
+        { name: "BBA in Advertising and Marketing", duration: "3 Years", type: "Full Time", image: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16" }
+      ]
+    }
   ];

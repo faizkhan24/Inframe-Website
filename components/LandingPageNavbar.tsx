@@ -21,7 +21,7 @@ const LandingNavbar = () => {
 
  
   return (
-    <header className="fixed w-full bg-white z-50 py-4 font-sans">
+    <header className="fixed w-full bg-white border shadow-sm z-50 py-4 font-sans">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
