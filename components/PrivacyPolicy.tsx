@@ -32,7 +32,6 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Media</h2>
               <p className="text-gray-600">If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
             </section>
-
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cookies</h2>
               <p className="text-gray-600 mb-4">If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>

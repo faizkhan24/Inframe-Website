@@ -1,7 +1,6 @@
 'use client'
 import { motion } from "framer-motion";
-import Image from "next/image";
-
+import Image from 'next/image';
 
 const StudentClubs = () => {
   const clubs = [
@@ -36,7 +35,7 @@ const StudentClubs = () => {
   ];
 
   return (
-    <section className=" py-16">
+    <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <motion.div 
@@ -57,7 +56,7 @@ const StudentClubs = () => {
           {clubs.map((club, index) => (
             <motion.div
               key={club.name}
-              className=" bg-white  overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -75,19 +74,17 @@ const StudentClubs = () => {
                   <p className="text-gray-600 mb-6 text-lg leading-relaxed">
                     {club.description}
                   </p>
-                  
-              
                 </div>
                 
                 {/* Image */}
                 <div className="md:w-2/5">
-                <Image
+                  <Image
                     src={club.src}
                     alt={club.name}
-                    className="object-cover"
-                    layout="fill"
-                    objectFit="cover"
-                    priority={index < 2} // Load first two images eagerly
+                    width={500}
+                    height={300}
+                    className="w-full h-full object-cover"
+                    priority={index === 0}
                   />
                 </div>
               </div>

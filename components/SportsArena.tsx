@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -74,11 +74,10 @@ const SportsArena = () => {
             <Image
               src={image.src}
               alt={image.alt}
-              className="rounded-lg object-cover w-full h-full"
-              width={500} // Adjust width based on your layout
-              height={500} // Adjust height based on your layout
-              layout="responsive"
-              priority={index < 3} // Load first 3 images eagerly
+              className="rounded-lg object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              priority={index < 3}
             />
           </div>
         ))}
