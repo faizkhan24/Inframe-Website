@@ -182,7 +182,7 @@ const AboutPage = () => {
             {/* Right side: Heading and Image */}
             <div data-aos="fade-right">
               <Image
-                src={"/campus images/IMG_20240605_124215.jpg"}
+                src={"/images/gallery/IMG_20240605_124215.jpg"}
                 alt={"Cultural Event"}
                 width={720}
                 height={480}
@@ -241,7 +241,7 @@ const AboutPage = () => {
             {/* Left side: Heading and Image */}
             <div data-aos="fade-right">
               <Image
-                src={"/campus images/1721366668571.jpg"}
+                src={"/images/gallery/1721366668571.jpg"}
                 alt="Cultural Event"
                 width={720}
                 height={480}
@@ -292,14 +292,14 @@ const AboutPage = () => {
             <div data-aos="fade-right">
               <div className="flex gap-10">
                 <Image
-                  src={"/campus images/1719575193328.jpg"}
+                  src={"/images/gallery/1719575193328.jpg"}
                   alt={"Cultural Event"}
                   height={480}
                   width={364}
                   className="rounded-lg shadow-lg"
                 />
                 <Image
-                  src={"/campus images/1719748180116.jpg"}
+                  src={"/images/gallery/1719748180116.jpg"}
                   alt={"Cultural Event"}
                   height={480}
                   width={364}

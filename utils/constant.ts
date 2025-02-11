@@ -385,19 +385,19 @@ export  const cards = [
       title: "Research Excellence",
       count: "500+",
       desc: "Published Research Papers",
-      image: "/campus images/1721123080085.jpg",
+      image: "/images/gallery/1721123080085.jpg",
     },
     {
       title: "Global Network",
       count: "50+",
       desc: "International Partners",
-      image: "/campus images/1719576914809_1.jpg",
+      image: "/images/gallery/1719576914809_1.jpg",
     },
     {
       title: "Innovation Hub",
       count: "100+",
       desc: "Startup Incubations",
-      image: "/campus images/1721112431013.jpg",
+      image: "/images/gallery/1721112431013.jpg",
     },
   ];
 
@@ -437,19 +437,19 @@ export  const cards = [
         title: "Innovation First",
         description:
         "At Inframe, we are committed to pushing boundaries through cutting-edge research and technology. Our students and faculty are constantly engaged in innovative projects that aim to transform industries and create lasting impact.",
-        image: "/campus images/1721122517472.jpg",
+        image: "/images/gallery/1721122517472.jpg",
       },
       {
         title: "Global Perspective",
         description:
         "Inframe fosters international collaboration and cultural exchange, offering a global platform for our students. With partnerships across the world, our community is enriched by diverse perspectives and experiences, preparing students for a global workforce.",
-        image: "/campus images/1719471947426.jpg",
+        image: "/images/gallery/1719471947426.jpg",
       },
       {
         title: "Sustainable Future",
         description:
           "We believe in the power of design and business to create a sustainable future. At Inframe, we lead initiatives that promote environmental sustainability and social responsibility, ensuring that our graduates are equipped to contribute to a better world.",
-        image: "/campus images/1717571273328 - Copy.jpg",
+        image: "/images/gallery/1717571273328 - Copy.jpg",
       },
     ];
   

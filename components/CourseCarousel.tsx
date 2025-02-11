@@ -216,16 +216,16 @@ const CourseCatalog = () => {
       className={`min-h-screen bg-gradient-to-b from-yellow-50 to-white ${poppins.className}`}
     >
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+        <div className="text-left mb-12">
+          <h1 className="text-4xl md:text-5xl my-10 font-bold mb-4 text-gray-800">
             Our Industry-Centered Programs
           </h1>
-          <div className="w-24 h-1 bg-yellow-400 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-yellow-400  rounded-full" />
         </div>
 
         <Tabs defaultValue="all" className="w-full ">
           <div className=" p-2 mb-12">
-            <TabsList className="w-full rounded-lg   justify-center gap-2  font-bold text-black font-sans">
+            <TabsList className="flex flex-wrap justify-center sm:justify-start my-3 rounded-lg   gap-2  font-bold text-black font-sans">
               {["all", "art", "business", "design"].map((tab) => (
                 <TabsTrigger
                   key={tab}
