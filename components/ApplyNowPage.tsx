@@ -52,8 +52,7 @@ import ApplyNow from "./ApplyNow";
 import ApplyNowForm from "./ApplyNowForm";
 import Image from "next/image";
 
-import CourseCarousel from "./CourseCarousel";
-import CourseList from "./CourseCarousel";
+
 import CourseCatalog from "./CourseCarousel";
 
 const poppins = Poppins({
@@ -167,30 +166,7 @@ export default function ApplyPage() {
     }
   }, [isScrolled, isFormOpen]);
 
-  const courses: Course[] = [
-    {
-      title: "B.Des Fashion Design",
-      duration: "4 Years",
-      type: "Full Time",
-      image:
-        "https://images.unsplash.com/photo-1537832816519-689ad163238b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    },
-    {
-      title: "Diploma in Interior Design",
-      duration: "1 Year",
-      type: "Full Time",
-      image:
-        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    },
-    {
-      title: "Advanced Product Design",
-      duration: "3 Years",
-      type: "Full Time",
-      image:
-        "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    },
-  ];
-
+ 
   const facilities: Facility[] = [
     {
       title: "Design Studios",
