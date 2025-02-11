@@ -1,5 +1,6 @@
 import React from "react";
 import { Facebook, Youtube, Instagram, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -117,7 +118,7 @@ const Footer = () => {
         <div className="container mx-auto px-6 lg:px-16 text-center text-sm opacity-80">
           <p>
             © 2025 Inframe. Ltd. All rights reserved ·{" "}
-            <a href="#" className="hover:underline">Privacy Policy</a> ·{" "}
+            <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link> ·{" "}
             <a href="#" className="hover:underline">Refund Policy</a> ·{" "}
             <a href="#" className="hover:underline">Terms & Conditions</a>
           </p>

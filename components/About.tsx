@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect } from "react";
 import { Card, CardContent } from "../components/ui/card";
 import { highlights, LOGOS, studentImages, values } from "../utils/constant";
@@ -17,13 +17,11 @@ const poppins = Poppins({
 
 const AboutPage = () => {
   useEffect(() => {
-  
-      Aos.init({
-        duration: 1000,
-        easing: "ease-in-out",
-        once: true,
-      });
- 
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
   }, []);
   // const { user, loginWithRedirect, logout, isAuthenticated,isLoading } = useAuth0();
 
@@ -358,13 +356,13 @@ const AboutPage = () => {
                 className="flex flex-col items-center justify-center text-slate-800"
               >
                 <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 shadow-md border bg-white border-gray-200 rounded-md flex items-center justify-center">
-                <Image
-          src={logo.src}
-          alt="not loaded"
-          width={192} // Set width dynamically based on container size (adjust as needed)
-          height={192}
-          className="object-contain w-full h-full"
-        />
+                  <Image
+                    src={logo.src}
+                    alt="not loaded"
+                    width={192} // Set width dynamically based on container size (adjust as needed)
+                    height={192}
+                    className="object-contain w-full h-full"
+                  />
                 </div>
                 <span
                   className={`mt-2 text-center text-sm md:text-base text-gray-700 ${poppins.className}`}

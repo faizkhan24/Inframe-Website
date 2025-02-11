@@ -165,15 +165,15 @@ export default function ApplyPage() {
   const facilities: Facility[] = [
     {
       title: "Design Studios",
-      image: "/campus images/DSC04140.jpg",
+      image: "/images/gallery/DSC04140.jpg",
     },
     {
       title: "Computer Labs",
-      image: "/campus images/1719471947426.jpg",
+      image: "/images/gallery/1719471947426.jpg",
     },
     {
       title: "Exhibition Spaces",
-      image: "/campus images/DSC04267.jpg",
+      image: "/images/gallery/DSC04267.jpg",
     },
   ];
 
