@@ -1,11 +1,16 @@
 import React from "react";
 import { Card, CardContent } from "../../components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../components/ui/tabs";
+import Image from "next/image";
 
 interface CurriculumData {
   image: string;
   imageAlt: string;
- 
 }
 
 interface Curriculum {
@@ -15,7 +20,9 @@ interface Curriculum {
 const CurriculumSection = ({ curriculum }: { curriculum: Curriculum }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 bg-white">
-      <h2 className="text-3xl font-bold mb-8 text-yellow-400">Course Curriculum</h2>
+      <h2 className="text-3xl font-bold mb-8 text-yellow-400">
+        Course Curriculum
+      </h2>
 
       {/* Tabs for Year selection */}
       <Tabs defaultValue="1st Year" className="w-full">
@@ -37,13 +44,17 @@ const CurriculumSection = ({ curriculum }: { curriculum: Curriculum }) => {
             <div className="mb-8">
               {/* Year image */}
               <div className="relative w-full h-64 mb-8 overflow-hidden rounded-lg">
-                <img
+                <Image
                   src={data.image}
                   alt={data.imageAlt}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-300 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">{year}</h3>
+                <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">
+                  {year}
+                </h3>
               </div>
 
               {/* Tabs for Semester selection */}
@@ -75,7 +86,9 @@ const CurriculumSection = ({ curriculum }: { curriculum: Curriculum }) => {
                                 key={index}
                                 className="p-4 bg-yellow-400 rounded-lg hover:bg-yellow-500 transition-colors"
                               >
-                                <p className="text-black font-bold">{subject}</p>
+                                <p className="text-black font-bold">
+                                  {subject}
+                                </p>
                               </div>
                             ))}
                           </div>

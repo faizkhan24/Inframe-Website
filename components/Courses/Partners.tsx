@@ -62,7 +62,7 @@ const IndustryPartners: React.FC = () => {
               className="flex flex-col items-center justify-center text-slate-800"
             >
               <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 shadow-md border border-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.name}
                   width={120}
