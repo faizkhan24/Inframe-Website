@@ -358,11 +358,13 @@ const AboutPage = () => {
                 className="flex flex-col items-center justify-center text-slate-800"
               >
                 <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 shadow-md border bg-white border-gray-200 rounded-md flex items-center justify-center">
-                  <img
-                    src={logo.src}
-                    alt={"not loaded"}
-                    className="object-contain  w-full h-full"
-                  />
+                <Image
+          src={logo.src}
+          alt="not loaded"
+          width={192} // Set width dynamically based on container size (adjust as needed)
+          height={192}
+          className="object-contain w-full h-full"
+        />
                 </div>
                 <span
                   className={`mt-2 text-center text-sm md:text-base text-gray-700 ${poppins.className}`}
