@@ -225,12 +225,12 @@ const CourseCatalog = () => {
 
         <Tabs defaultValue="all" className="w-full ">
           <div className=" p-2 mb-12">
-            <TabsList className="w-full rounded-lg   justify-center gap-2 bg-white font-bold text-black font-sans">
+            <TabsList className="w-full rounded-lg   justify-center gap-2  font-bold text-black font-sans">
               {["all", "art", "business", "design"].map((tab) => (
                 <TabsTrigger
                   key={tab}
                   value={tab}
-                  className="px-8 py-3 data-[state=active]:bg-yellow-400  font-sans font-bold data-[state=active]:text-black transition-all duration-300"
+                  className="px-8 py-3 data-[state=active]:bg-yellow-400 border border-black  font-sans font-bold data-[state=active]:text-black transition-all duration-300"
                 >
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
                 </TabsTrigger>
