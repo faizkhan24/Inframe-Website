@@ -35,8 +35,8 @@ const MembershipPartnership = () => {
             <Image
               src="/skill india.jpeg"
               alt="Skill India Logo"
-              width={150}
-              height={112}
+              width={500}
+              height={500}
               objectFit="contain"
               className="transition-transform transform hover:scale-110 shadow-lg rounded-lg bg-white p-4"
             />
