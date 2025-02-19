@@ -1,10 +1,12 @@
+
 import React from 'react'
-import PrivacyPolicy from '../../components/PrivacyPolicy'
+import RefundPolicy from '../../../components/RefundPolicy'
+
 
 const page = () => {
   return (
     <div>
-        <PrivacyPolicy/>
+        <RefundPolicy/>
     </div>
   )
 }

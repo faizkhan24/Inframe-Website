@@ -1,7 +1,10 @@
 // app/[category]/page.tsx
 
-import CoursePage from "../../components/Courses/CoursePage";
-import { courseTypes } from "../../utils/courseTypes";
+
+
+import CoursePage from "../../../components/Courses/CoursePage";
+import { courseTypes } from "../../../utils/courseTypes";
+
 
 type ParamsType = Promise<{ category: string }>;
 
@@ -12,8 +15,12 @@ export default async function CategoryPage({
 }) {
   const { category } = await params;
   const categoryLower = category.toLowerCase();
+  console.log(category);
+  
   
   const categoryCourses = courseTypes[categoryLower];
+  console.log(categoryCourses);
+  
   
   
   
