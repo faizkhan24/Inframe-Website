@@ -1,33 +1,23 @@
-// app/[category]/page.tsx
+import CategoryLandingPage from "../../../components/CategoryLandingPage"
+import { courseTypes } from "../../../utils/courseTypes"
 
+type ParamsType = { category: string }
 
+export default async function CategoryPage({ params }: { params: ParamsType }) {
+  const { category } = params
+  const categoryLower = category.toLowerCase()
 
-import CoursePage from "../../../components/Courses/CoursePage";
-import { courseTypes } from "../../../utils/courseTypes";
+  // Ensure only valid categories are included
+  if (!courseTypes[categoryLower]) {
+    return <div>Category not found</div>
+  }
 
+  const categoryCourses = courseTypes[categoryLower]
 
-type ParamsType = Promise<{ category: string }>;
-
-export default async function CategoryPage({
-  params,
-}: {
-  params: ParamsType;
-}) {
-  const { category } = await params;
-  const categoryLower = category.toLowerCase();
-  console.log(category);
-  
-  
-  const categoryCourses = courseTypes[categoryLower];
-  console.log(categoryCourses);
-  
-  
-  
-  
-  return <CoursePage courseType={categoryCourses} category={categoryLower} />;
+  return <CategoryLandingPage category={categoryLower} courses={categoryCourses} />
 }
 
-// Generate metadata
+// Generate metadata for SEO
 export async function generateMetadata({ params }: { params: ParamsType }) {
   const { category } = await params;
   return {
@@ -36,8 +26,11 @@ export async function generateMetadata({ params }: { params: ParamsType }) {
   };
 }
 
+
+// Generate Static Paths for Dynamic Routing
 export async function generateStaticParams() {
   return Object.keys(courseTypes).map((category) => ({
     category,
-  }));
+  }))
 }
+

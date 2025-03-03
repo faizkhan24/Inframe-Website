@@ -1,28 +1,32 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../components/ui/select";
-import { CourseType } from "../../utils/courseTypes";
-import CourseContent from "./CourseContent";
+"use client"
+import type React from "react"
+import { useState, useEffect } from "react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../components/ui/select"
+import type { CourseType } from "../../utils/courseTypes"
+import CourseContent from "./CourseContent"
 
 interface CoursePageProps {
-  courseType: CourseType[];
-  category: string;
+  courseType: CourseType[]
+  category: string
+  initialTabIndex?: number
 }
 
-const CoursePage: React.FC<CoursePageProps> = ({ courseType, category }) => {
-  const [mounted, setMounted] = useState(false);
-  const [selectedTab, setSelectedTab] = useState("");
+const CoursePage: React.FC<CoursePageProps> = ({ courseType, category, initialTabIndex = 0 }) => {
+  const [mounted, setMounted] = useState(false)
+  const [selectedTab, setSelectedTab] = useState("")
 
   useEffect(() => {
-    setMounted(true);
+    setMounted(true)
     if (courseType?.length > 0) {
-      setSelectedTab(courseType[0].value);
+      // Use the initialTabIndex to set the selected tab
+      const initialTab = courseType[initialTabIndex] || courseType[0]
+      setSelectedTab(initialTab.value)
     }
-  }, [courseType]);
+  }, [courseType, initialTabIndex])
 
   if (!mounted) {
-    return null; // or a loading skeleton
+    return null // or a loading skeleton
   }
 
   if (!courseType?.length) {
@@ -30,7 +34,7 @@ const CoursePage: React.FC<CoursePageProps> = ({ courseType, category }) => {
       <div className="min-h-screen mt-24 sm:mt-0 font-sans bg-black text-white flex items-center justify-center">
         <p>No courses available for this category.</p>
       </div>
-    );
+    )
   }
   return (
     <div className="min-h-screen mt-24 sm:mt-0 font-sans bg-black text-white">
@@ -74,7 +78,8 @@ const CoursePage: React.FC<CoursePageProps> = ({ courseType, category }) => {
         ))}
       </Tabs>
     </div>
-  );
-};
+  )
+}
 
-export default CoursePage;
+export default CoursePage
+
